@@ -1,0 +1,228 @@
+:root {
+  --bg: #0d0d14;
+  --panel: rgba(19, 20, 31, 0.86);
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --text: #f5f7ff;
+  --muted: #c8cde0;
+  --accent: #8d5cf6;
+  --accent-strong: #6c3ce1;
+  --success: #26d07c;
+  --button-text: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: 'Inter', sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(141, 92, 246, 0.25), transparent 30%),
+    linear-gradient(180deg, #090910 0%, #0f1021 100%);
+  color: var(--text);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px 16px 40px;
+}
+
+.app-shell {
+  width: min(100%, 440px);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.brand-mark {
+  font-size: 1.4rem;
+}
+
+.ghost-button,
+.primary-button,
+.secondary-button {
+  border: none;
+  border-radius: 14px;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.ghost-button:hover,
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-1px);
+}
+
+.ghost-button {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  padding: 10px 14px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 28px;
+  backdrop-filter: blur(12px);
+  padding: 26px 20px 20px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+.eyebrow {
+  display: inline-block;
+  background: rgba(141, 92, 246, 0.12);
+  color: #d9caff;
+  border: 1px solid rgba(141, 92, 246, 0.35);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  line-height: 1.05;
+}
+
+.subtitle {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.feature-list {
+  margin-top: 22px;
+  display: grid;
+  gap: 16px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 10px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.feature-item .icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  background: rgba(141, 92, 246, 0.12);
+  border-radius: 12px;
+  font-size: 1.2rem;
+}
+
+.feature-item strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.98rem;
+}
+
+.feature-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.cta-panel {
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.small-label,
+.meta-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.price {
+  margin-top: 4px;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 16px 18px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+  color: var(--button-text);
+  min-width: 160px;
+}
+
+.secondary-button {
+  margin-top: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mini-meta {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  border-radius: 16px;
+  padding: 12px 14px;
+}
+
+.mini-meta strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 420px) {
+  .cta-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary-button {
+    width: 100%;
+  }
+}
