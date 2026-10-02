@@ -1,344 +1,444 @@
-:root {
-  --bg: #0d0d14;
-  --panel: rgba(19, 20, 31, 0.86);
-  --panel-border: rgba(255, 255, 255, 0.08);
-  --text: #f5f7ff;
-  --muted: #c8cde0;
-  --accent: #8d5cf6;
-  --accent-strong: #6c3ce1;
-  --success: #26d07c;
-  --button-text: #ffffff;
-  --safe-area-top: max(24px, env(safe-area-inset-top));
-  --safe-area-bottom: max(24px, env(safe-area-inset-bottom));
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Jacqueline's VIP Club — monthly subscription + exclusive pay-per-view content."
+    />
+    <meta name="theme-color" content="#0d0d14" />
+    <title>Jacqueline VIP Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">👑</span>
+          <span>Jacqueline VIP</span>
+        </div>
+        <button id="themeButton" class="ghost-button" type="button" title="Toggle theme">🎨</button>
+      </header>
 
-* {
-  box-sizing: border-box;
-}
+      <main class="card">
+        <div class="hero-section">
+          <div class="hero-badge">✨ VIP MEMBERSHIP ✨</div>
+          <h1>Jacqueline's VIP Club</h1>
+          <p class="subtitle">
+            Unlock access to Jacqueline's private monthly VIP subscription and exclusive pay-per-view premium content.
+          </p>
+        </div>
 
-html, body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background:
-    radial-gradient(circle at top, rgba(141, 92, 246, 0.25), transparent 30%),
-    linear-gradient(180deg, #090910 0%, #0f1021 100%);
-  color: var(--text);
-  overflow-x: hidden;
-}
+        <div class="feature-list">
+          <div class="feature-item">
+            <span class="icon">💎</span>
+            <div>
+              <strong>Monthly VIP Subscription</strong>
+              <p>Recurring access to exclusive channel updates and premium content</p>
+            </div>
+          </div>
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: var(--safe-area-top) 16px var(--safe-area-bottom);
-}
+          <div class="feature-item">
+            <span class="icon">📸</span>
+            <div>
+              <strong>Exclusive Photos & Content</strong>
+              <p>Private and premium imagery available to members</p>
+            </div>
+          </div>
 
-.app-shell {
-  width: 100%;
-  max-width: 480px;
-}
+          <div class="feature-item">
+            <span class="icon">⚡</span>
+            <div>
+              <strong>Instant Delivery</strong>
+              <p>Access granted immediately after purchase</p>
+            </div>
+          </div>
+        </div>
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  gap: 12px;
-}
+        <section class="pricing-section">
+          <div class="pricing-panel featured-plan">
+            <div class="price-label">MONTHLY VIP</div>
+            <div class="price-amount">$35.00</div>
+            <div class="price-subtext">per month • recurring subscription</div>
+            <div class="price-benefits">
+              <span class="benefit">✓ VIP channel access</span>
+              <span class="benefit">✓ Monthly content drops</span>
+            </div>
+            <a id="subscriptionButton" class="primary-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">
+              💳 Join Monthly VIP
+            </a>
+          </div>
+        </section>
 
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-}
+        <section class="ppv-section">
+          <div class="section-title">Pay-Per-View Content</div>
 
-.brand-mark {
-  font-size: 1.4rem;
-  display: block;
-}
+          <article class="ppv-card">
+            <div class="ppv-header">
+              <div>
+                <div class="ppv-tag">LIMITED DROP</div>
+                <h2>Content Pack 01</h2>
+              </div>
+              <div class="ppv-price">$9</div>
+            </div>
+            <p>Example premium photo set for a single purchase. Replace this with your actual content offer.</p>
+            <a class="ppv-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Buy Access</a>
+          </article>
 
-.ghost-button,
-.primary-button,
-.secondary-button {
-  border: none;
-  border-radius: 14px;
-  font: inherit;
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
-  -webkit-tap-highlight-color: transparent;
-}
+          <article class="ppv-card">
+            <div class="ppv-header">
+              <div>
+                <div class="ppv-tag">SPECIAL</div>
+                <h2>Content Pack 02</h2>
+              </div>
+              <div class="ppv-price">$15</div>
+            </div>
+            <p>Example premium collection. Swap in your real content item, title, and linked checkout URL.</p>
+            <a class="ppv-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Buy Access</a>
+          </article>
 
-.ghost-button:active,
-.primary-button:active,
-.secondary-button:active {
-  transform: scale(0.98);
-}
+          <article class="ppv-card">
+            <div class="ppv-header">
+              <div>
+                <div class="ppv-tag">BEST VALUE</div>
+                <h2>Content Pack 03</h2>
+              </div>
+              <div class="ppv-price">$25</div>
+            </div>
+            <p>Example premium bundle. Easy to replace once you have the final content titles and Stripe links.</p>
+            <a class="ppv-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Buy Access</a>
+          </article>
+        </section>
 
-.ghost-button {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--text);
-  padding: 10px 14px;
-  font-size: 1.2rem;
-}
+        <div class="bot-info">
+          <div class="info-badge">
+            <span class="badge-label">Bot Username</span>
+            <strong id="botValue">@Jaquelines_Payment_bot</strong>
+          </div>
+          <div class="info-badge">
+            <span class="badge-label">Status</span>
+            <strong>✓ Verified VIP Access</strong>
+          </div>
+        </div>
 
-.card {
-  background: var(--panel);
-  border: 1px solid var(--panel-border);
-  border-radius: 28px;
-  backdrop-filter: blur(12px);
-  padding: 28px 20px;
-  box-shadow:
-    0 8px 16px rgba(0, 0, 0, 0.15),
-    0 0 1px rgba(141, 92, 246, 0.1);
-}
+        <div class="button-group">
+          <button id="telegramButton" class="secondary-button" type="button">
+            📱 Open Telegram Bot
+          </button>
+        </div>
 
-.hero-section {
-  text-align: center;
-  margin-bottom: 28px;
-}
+        <footer class="footer">
+          <p>Powered by <strong>Telegram WebApp</strong> & <strong>Stripe</strong></p>
+          <p class="security-note">🔐 Secure checkout • Monthly subscription • PPV access</p>
+        </footer>
+      </main>
+    </div>
 
-.hero-badge {
-  display: inline-block;
-  background: linear-gradient(135deg, rgba(141, 92, 246, 0.2) 0%, rgba(141, 92, 246, 0.1) 100%);
-  color: #d9caff;
-  border: 1px solid rgba(141, 92, 246, 0.4);
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 16px;
-  backdrop-filter: blur(8px);
-}
+    <script src="script.js"></script>
+  </body>
+</html>
 
-h1 {
-  margin: 0;
-  font-size: clamp(2rem, 7vw, 3rem);
-  line-height: 1.05;
-  background: linear-gradient(135deg, #f5f7ff 0%, #d9caff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 
-.subtitle {
-  margin: 14px 0 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
 
-.feature-list {
-  margin: 28px 0;
-  display: grid;
-  gap: 12px;
-}
 
-.feature-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 14px 12px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  transition: background 0.3s ease, border-color 0.3s ease;
-}
 
-.feature-item:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(141, 92, 246, 0.2);
-}
 
-.feature-item .icon {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  background: rgba(141, 92, 246, 0.15);
-  border-radius: 12px;
-  font-size: 1.3rem;
-}
 
-.feature-item strong {
-  display: block;
-  margin-bottom: 3px;
-  font-size: 0.95rem;
-}
 
-.feature-item p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.82rem;
-  line-height: 1.5;
-}
 
-.pricing-panel {
-  margin: 28px 0;
-  padding: 20px 16px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, rgba(141, 92, 246, 0.1) 0%, rgba(141, 92, 246, 0.05) 100%);
-  border: 1px solid rgba(141, 92, 246, 0.25);
-  text-align: center;
-}
 
-.price-label {
-  display: block;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 8px;
-}
 
-.price-amount {
-  font-size: 2.8rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #8d5cf6 0%, #a78bfa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 12px;
-}
 
-.price-benefits {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
 
-.benefit {
-  font-size: 0.82rem;
-  color: var(--success);
-}
 
-.button-group {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  margin: 28px 0;
-}
 
-.primary-button,
-.secondary-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 18px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  letter-spacing: 0.3px;
-  width: 100%;
-  gap: 8px;
-}
 
-.primary-button {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
-  color: var(--button-text);
-  box-shadow: 0 8px 24px rgba(141, 92, 246, 0.35);
-}
 
-.primary-button:hover {
-  box-shadow: 0 12px 32px rgba(141, 92, 246, 0.45);
-}
 
-.secondary-button {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
 
-.secondary-button:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.2);
-}
 
-.bot-info {
-  margin: 28px 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 12px;
-}
 
-.info-badge {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  padding: 14px 12px;
-  text-align: center;
-}
 
-.badge-label {
-  display: block;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 6px;
-}
 
-.info-badge strong {
-  display: block;
-  font-size: 0.9rem;
-  word-break: break-all;
-}
 
-.footer {
-  margin-top: 28px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
 
-.footer p {
-  margin: 6px 0;
-}
 
-.security-note {
-  color: var(--success);
-  font-weight: 500;
-}
 
-/* Light theme */
-body.light-theme {
-  background:
-    radial-gradient(circle at top, rgba(141, 92, 246, 0.15), transparent 30%),
-    linear-gradient(180deg, #f5f7ff 0%, #e8ecff 100%);
-}
 
-body.light-theme {
-  --bg: #f5f7ff;
-  --panel: rgba(255, 255, 255, 0.92);
-  --panel-border: rgba(17, 24, 39, 0.1);
-  --text: #111827;
-  --muted: #4b5563;
-}
 
-@media (max-width: 420px) {
-  .topbar {
-    margin-bottom: 16px;
-  }
 
-  .card {
-    padding: 20px 16px;
-    border-radius: 24px;
-  }
 
-  h1 {
-    font-size: 1.8rem;
-  }
 
-  .price-amount {
-    font-size: 2.4rem;
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
