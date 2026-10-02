@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="description" content="Jacqueline VIP Boutique — exclusive monthly membership and premium pay-per-view content." />
-    <meta name="theme-color" content="#120b16" />
+    <meta name="description" content="Jacqueline VIP Boutique — monthly subscription and curated premium content." />
+    <meta name="theme-color" content="#120b14" />
     <title>Jacqueline VIP Boutique</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,75 +13,78 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="shell">
+    <div class="page-shell">
       <header class="topbar">
         <div class="brand">
           <span class="brand-mark">✦</span>
           <span>Jacqueline</span>
         </div>
-        <button id="themeButton" class="theme-toggle" type="button" aria-label="Toggle theme">◐</button>
+        <button id="themeButton" class="theme-btn" type="button" aria-label="Toggle theme">◐</button>
       </header>
 
-      <main class="panel">
-        <section class="hero">
-          <div class="eyebrow">Exclusive members club</div>
+      <main class="luxury-card">
+        <div class="hero-copy">
+          <div class="eyebrow">Private members club</div>
           <h1>Jacqueline VIP Boutique</h1>
           <p>
-            Private monthly access, premium drops, and elevated digital moments curated for members.
+            Premium monthly access and exclusive releases crafted for a more elevated private experience.
           </p>
-        </section>
+        </div>
 
-        <section class="box subscription-box">
-          <div class="box-label">Monthly membership</div>
-          <div class="price">$35.00</div>
-          <div class="subtext">USD / month</div>
+        <section class="membership-panel">
+          <div class="plan-header">
+            <span class="micro-label">Monthly Membership</span>
+            <span class="plan-price">$35</span>
+          </div>
 
-          <ul>
-            <li>VIP access to the private channel</li>
-            <li>Monthly exclusive content drops</li>
-            <li>Early access to new releases</li>
+          <div class="plan-meta">USD / month</div>
+
+          <ul class="feature-list">
+            <li>Private VIP channel access</li>
+            <li>Exclusive monthly drops</li>
+            <li>Early access to premium releases</li>
           </ul>
 
-          <a class="primary-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">
+          <a class="cta-button primary" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">
             Join the VIP Membership
           </a>
         </section>
 
         <section class="ppv-section">
-          <div class="section-title">Pay-Per-View</div>
+          <div class="section-heading">Pay-Per-View</div>
 
           <article class="ppv-item">
-            <div class="ppv-head">
-              <span class="tag">Limited release</span>
+            <div class="ppv-top">
+              <span class="ppv-tag">Limited release</span>
               <span class="ppv-price">$9</span>
             </div>
             <h2>Collection No. 01</h2>
-            <p>Example premium digital release. Replace with your real title and checkout URL anytime.</p>
-            <a class="secondary-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Purchase</a>
+            <p>Example premium digital drop. Replace this with your real title and checkout link when ready.</p>
+            <a class="cta-button secondary" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Purchase</a>
           </article>
 
           <article class="ppv-item">
-            <div class="ppv-head">
-              <span class="tag">Featured drop</span>
+            <div class="ppv-top">
+              <span class="ppv-tag">Featured drop</span>
               <span class="ppv-price">$15</span>
             </div>
             <h2>Collection No. 02</h2>
-            <p>Example premium bundle. Edit the details later when you’re ready to launch your actual offers.</p>
-            <a class="secondary-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Purchase</a>
+            <p>Example signature bundle. Swap in your exact content offer later to keep the layout polished.</p>
+            <a class="cta-button secondary" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Purchase</a>
           </article>
 
           <article class="ppv-item">
-            <div class="ppv-head">
-              <span class="tag">Collector's edit</span>
+            <div class="ppv-top">
+              <span class="ppv-tag">Collector's edit</span>
               <span class="ppv-price">$25</span>
             </div>
             <h2>Collection No. 03</h2>
-            <p>Example collector release for premium one-off access. Swap in your real content whenever you want.</p>
-            <a class="secondary-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Purchase</a>
+            <p>Example premium collection tailored to a single high-value purchase opportunity.</p>
+            <a class="cta-button secondary" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Purchase</a>
           </article>
         </section>
 
-        <div class="meta-grid">
+        <div class="meta-row">
           <div class="meta-box">
             <span>Bot</span>
             <strong>@Jaquelines_Payment_bot</strong>
