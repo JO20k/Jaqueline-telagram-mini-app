@@ -1,5 +1,5 @@
-const botUsername = '@your_bot_username';
-const stripeLink = 'https://buy.stripe.com/test_';
+const botUsername = '@Jaquelines_Payment_bot';
+const stripeLink = 'https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00';
 
 const telegramButton = document.getElementById('telegramButton');
 const checkoutButton = document.getElementById('checkoutButton');
