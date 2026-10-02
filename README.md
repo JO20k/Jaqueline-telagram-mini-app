@@ -1,86 +1,23 @@
-const CONFIG = {
-  botUsername: 'Jaquelines_Payment_bot',
-  botLink: 'https://t.me/Jaquelines_Payment_bot',
-  stripeLink: 'https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00'
-};
+const tg = window.Telegram?.WebApp;
 
-const telegramButton = document.getElementById('telegramButton');
-const themeButton = document.getElementById('themeButton');
-const membershipButton = document.getElementById('membershipButton');
-
-init();
-
-function init() {
-  bindEvents();
-  applyStoredTheme();
-  initTelegramWebApp();
-
-  if (membershipButton) {
-    membershipButton.href = CONFIG.stripeLink;
-  }
+if (tg) {
+  tg.ready();
+  tg.expand();
 }
 
-function bindEvents() {
-  if (telegramButton) {
-    telegramButton.addEventListener('click', openTelegramBot);
-  }
-
-  if (themeButton) {
-    themeButton.addEventListener('click', toggleTheme);
-  }
-}
-
-function openTelegramBot() {
-  const tg = window.Telegram?.WebApp;
+document.getElementById('telegramButton')?.addEventListener('click', () => {
+  const botUrl = 'https://t.me/Jaquelines_Payment_bot';
 
   if (tg && tg.openTelegramLink) {
-    tg.openTelegramLink(CONFIG.botLink);
+    tg.openTelegramLink(botUrl);
     return;
   }
 
-  window.open(CONFIG.botLink, '_blank', 'noopener,noreferrer');
-}
-
-function toggleTheme() {
-  const isLight = document.body.classList.toggle('light-theme');
-  localStorage.setItem('theme', isLight ? 'light' : 'dark');
-}
-
-function applyStoredTheme() {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'light') {
-    document.body.classList.add('light-theme');
-  }
-}
-
-function initTelegramWebApp() {
-  const tg = window.Telegram?.WebApp;
-  if (!tg) return;
-
-  tg.expand();
-  tg.ready();
-
-  if (tg.onThemeChanged) {
-    tg.onThemeChanged(() => applyTelegramTheme(tg));
-  }
-
-  applyTelegramTheme(tg);
-}
-
-function applyTelegramTheme(tg) {
-  const theme = tg.themeParams;
-  if (!theme) return;
-
-  const root = document.documentElement;
-  if (theme.bg_color) root.style.setProperty('--bg', theme.bg_color);
-  if (theme.text_color) root.style.setProperty('--text', theme.text_color);
-  if (theme.hint_color) root.style.setProperty('--muted', theme.hint_color);
-  if (theme.button_color) root.style.setProperty('--accent', theme.button_color);
-  if (theme.button_text_color) root.style.setProperty('--button-text', theme.button_text_color);
-}
+  window.open(botUrl, '_blank', 'noopener,noreferrer');
+});
 
 window.isTelegramWebApp = function () {
-  return typeof window.Telegram !== 'undefined' && !!window.Telegram.WebApp;
+  return !!window.Telegram?.WebApp;
 };
 
 
@@ -248,4 +185,385 @@ window.isTelegramWebApp = function () {
 
 
 
-'}]} ،
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"}]} ,
