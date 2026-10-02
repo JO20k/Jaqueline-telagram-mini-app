@@ -3,141 +3,120 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta
-      name="description"
-      content="Jacqueline's VIP Club — monthly subscription + exclusive pay-per-view content."
-    />
-    <meta name="theme-color" content="#0d0d14" />
-    <title>Jacqueline VIP Club</title>
+    <meta name="description" content="Jacqueline's VIP Club — a luxury boutique subscription and exclusive pay-per-view collection." />
+    <meta name="theme-color" content="#120b16" />
+    <title>Jacqueline | VIP Boutique</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="app-shell">
       <header class="topbar">
-        <div class="brand">
-          <span class="brand-mark">👑</span>
-          <span>Jacqueline VIP</span>
+        <div class="brand" aria-label="Jacqueline VIP Boutique">
+          <span class="brand-mark">✦</span>
+          <span>Jacqueline</span>
         </div>
-        <button id="themeButton" class="ghost-button" type="button" title="Toggle theme">🎨</button>
+        <button id="themeButton" class="ghost-button" type="button" aria-label="Toggle theme">◐</button>
       </header>
 
       <main class="card">
-        <div class="hero-section">
-          <div class="hero-badge">✨ VIP MEMBERSHIP ✨</div>
-          <h1>Jacqueline's VIP Club</h1>
+        <div class="hero-block">
+          <div class="hero-kicker">Exclusive Members Club</div>
+          <h1>Jacqueline VIP Boutique</h1>
           <p class="subtitle">
-            Unlock access to Jacqueline's private monthly VIP subscription and exclusive pay-per-view premium content.
+            A private membership for premium access, curated releases, and elevated digital experiences.
           </p>
         </div>
 
-        <div class="feature-list">
+        <div class="feature-row">
           <div class="feature-item">
-            <span class="icon">💎</span>
+            <span class="feature-icon">✧</span>
             <div>
-              <strong>Monthly VIP Subscription</strong>
-              <p>Recurring access to exclusive channel updates and premium content</p>
+              <strong>Private Access</strong>
+              <span>Members-only channel and curated drops</span>
             </div>
           </div>
-
           <div class="feature-item">
-            <span class="icon">📸</span>
+            <span class="feature-icon">◌</span>
             <div>
-              <strong>Exclusive Photos & Content</strong>
-              <p>Private and premium imagery available to members</p>
-            </div>
-          </div>
-
-          <div class="feature-item">
-            <span class="icon">⚡</span>
-            <div>
-              <strong>Instant Delivery</strong>
-              <p>Access granted immediately after purchase</p>
+              <strong>Luxury Content</strong>
+              <span>Elevated selections with premium presentation</span>
             </div>
           </div>
         </div>
 
         <section class="pricing-section">
-          <div class="pricing-panel featured-plan">
-            <div class="price-label">MONTHLY VIP</div>
-            <div class="price-amount">$35.00</div>
-            <div class="price-subtext">per month • recurring subscription</div>
-            <div class="price-benefits">
-              <span class="benefit">✓ VIP channel access</span>
-              <span class="benefit">✓ Monthly content drops</span>
-            </div>
+          <div class="pricing-panel premium-plan">
+            <div class="plan-label">Monthly Boutique Membership</div>
+            <div class="plan-price">$35.00</div>
+            <div class="plan-meta">USD / month</div>
+            <ul class="plan-list">
+              <li>VIP channel access</li>
+              <li>Monthly exclusive drops</li>
+              <li>Early access to releases</li>
+            </ul>
             <a id="subscriptionButton" class="primary-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">
-              💳 Join Monthly VIP
+              Join the VIP Membership
             </a>
           </div>
         </section>
 
         <section class="ppv-section">
-          <div class="section-title">Pay-Per-View Content</div>
+          <div class="section-header">
+            <span>Pay-Per-View Collection</span>
+          </div>
 
           <article class="ppv-card">
-            <div class="ppv-header">
-              <div>
-                <div class="ppv-tag">LIMITED DROP</div>
-                <h2>Content Pack 01</h2>
-              </div>
-              <div class="ppv-price">$9</div>
+            <div class="ppv-topline">
+              <span class="ppv-tag">Limited Release</span>
+              <span class="ppv-price">$9</span>
             </div>
-            <p>Example premium photo set for a single purchase. Replace this with your actual content offer.</p>
-            <a class="ppv-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Buy Access</a>
+            <h2>Collection No. 01</h2>
+            <p>Luxury digital release for a single premium purchase. Replace with your real title and checkout URL.</p>
+            <a class="ppv-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Purchase</a>
           </article>
 
           <article class="ppv-card">
-            <div class="ppv-header">
-              <div>
-                <div class="ppv-tag">SPECIAL</div>
-                <h2>Content Pack 02</h2>
-              </div>
-              <div class="ppv-price">$15</div>
+            <div class="ppv-topline">
+              <span class="ppv-tag">Featured Drop</span>
+              <span class="ppv-price">$15</span>
             </div>
-            <p>Example premium collection. Swap in your real content item, title, and linked checkout URL.</p>
-            <a class="ppv-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Buy Access</a>
+            <h2>Collection No. 02</h2>
+            <p>Signature premium bundle. Update the title and link later when your final PPV assets are ready.</p>
+            <a class="ppv-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Purchase</a>
           </article>
 
           <article class="ppv-card">
-            <div class="ppv-header">
-              <div>
-                <div class="ppv-tag">BEST VALUE</div>
-                <h2>Content Pack 03</h2>
-              </div>
-              <div class="ppv-price">$25</div>
+            <div class="ppv-topline">
+              <span class="ppv-tag">Collector's Edit</span>
+              <span class="ppv-price">$25</span>
             </div>
-            <p>Example premium bundle. Easy to replace once you have the final content titles and Stripe links.</p>
-            <a class="ppv-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Buy Access</a>
+            <h2>Collection No. 03</h2>
+            <p>Curated premium release made for members seeking a higher-end exclusive purchase.</p>
+            <a class="ppv-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Purchase</a>
           </article>
         </section>
 
-        <div class="bot-info">
-          <div class="info-badge">
-            <span class="badge-label">Bot Username</span>
+        <div class="meta-grid">
+          <div class="meta-card">
+            <span class="meta-label">Bot</span>
             <strong id="botValue">@Jaquelines_Payment_bot</strong>
           </div>
-          <div class="info-badge">
-            <span class="badge-label">Status</span>
-            <strong>✓ Verified VIP Access</strong>
+          <div class="meta-card">
+            <span class="meta-label">Access</span>
+            <strong>Private & Premium</strong>
           </div>
         </div>
 
-        <div class="button-group">
-          <button id="telegramButton" class="secondary-button" type="button">
-            📱 Open Telegram Bot
-          </button>
+        <div class="cta-row">
+          <button id="telegramButton" class="secondary-button" type="button">Open Telegram Bot</button>
         </div>
 
         <footer class="footer">
-          <p>Powered by <strong>Telegram WebApp</strong> & <strong>Stripe</strong></p>
-          <p class="security-note">🔐 Secure checkout • Monthly subscription • PPV access</p>
+          <p>Luxury boutique membership • secure checkout • private access</p>
         </footer>
       </main>
     </div>
@@ -145,266 +124,6 @@
     <script src="script.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
