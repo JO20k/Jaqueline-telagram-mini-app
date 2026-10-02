@@ -2,11 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta
       name="description"
       content="Jacqueline's VIP Club — exclusive access to a private Telegram channel and premium digital content."
     />
+    <meta name="theme-color" content="#0d0d14" />
     <title>Jacqueline VIP Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -23,67 +25,88 @@
           <span class="brand-mark">👑</span>
           <span>Jacqueline VIP</span>
         </div>
-        <button id="themeButton" class="ghost-button" type="button">Theme</button>
+        <button id="themeButton" class="ghost-button" type="button" title="Toggle theme">🎨</button>
       </header>
 
       <main class="card">
-        <div class="eyebrow">Exclusive Access</div>
-        <h1>Jacqueline's VIP Club</h1>
-        <p class="subtitle">
-          Unlock instant admission to Jacqueline's private VIP channel plus direct access to the full
-          high-resolution digital photo collection.
-        </p>
+        <div class="hero-section">
+          <div class="hero-badge">✨ EXCLUSIVE ACCESS ✨</div>
+          <h1>Jacqueline's VIP Club</h1>
+          <p class="subtitle">
+            Unlock instant admission to Jacqueline's private VIP channel plus direct access to the full
+            high-resolution digital photo collection.
+          </p>
+        </div>
 
         <div class="feature-list">
           <div class="feature-item">
-            <span class="icon">✨</span>
+            <span class="icon">💎</span>
             <div>
-              <strong>Instant VIP Channel Invite</strong>
-              <p>Get access immediately after purchase.</p>
+              <strong>Premium VIP Access</strong>
+              <p>Exclusive membership to the private channel</p>
             </div>
           </div>
 
           <div class="feature-item">
             <span class="icon">📸</span>
             <div>
-              <strong>High-Resolution Digital Content</strong>
-              <p>Private collection available for your eyes only.</p>
+              <strong>High-Resolution Content</strong>
+              <p>Full digital photo collection at your fingertips</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <span class="icon">⚡</span>
+            <div>
+              <strong>Instant Delivery</strong>
+              <p>Automated bot delivery within seconds</p>
             </div>
           </div>
 
           <div class="feature-item">
             <span class="icon">🔒</span>
             <div>
-              <strong>Secure Stripe Checkout</strong>
-              <p>Protected with 256-bit SSL encryption.</p>
+              <strong>Secure Checkout</strong>
+              <p>256-bit SSL encrypted Stripe payment</p>
             </div>
           </div>
         </div>
 
-        <div class="cta-panel">
-          <div>
-            <div class="small-label">Price</div>
-            <div class="price">$29</div>
+        <div class="pricing-panel">
+          <div class="price-info">
+            <div class="price-label">ONE-TIME PAYMENT</div>
+            <div class="price-amount">$35.00 USD</div>
           </div>
-          <a id="checkoutButton" class="primary-button" href="https://buy.stripe.com/test_" target="_blank" rel="noopener noreferrer">
-            Pay via Stripe
+          <div class="price-benefits">
+            <span class="benefit">✓ Lifetime access</span>
+            <span class="benefit">✓ Full photo collection</span>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <a id="checkoutButton" class="primary-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">
+            💳 Proceed to Stripe Checkout
           </a>
+          <button id="telegramButton" class="secondary-button" type="button">
+            📱 Open Telegram Bot
+          </button>
         </div>
 
-        <div class="mini-meta">
-          <div>
-            <span class="meta-label">Bot</span>
-            <strong id="botValue">@your_bot_username</strong>
+        <div class="bot-info">
+          <div class="info-badge">
+            <span class="badge-label">Bot Username</span>
+            <strong id="botValue">@Jaquelines_Payment_bot</strong>
           </div>
-          <div>
-            <span class="meta-label">Status</span>
-            <strong>Verified VIP Access</strong>
+          <div class="info-badge">
+            <span class="badge-label">Status</span>
+            <strong>✓ Verified VIP Access</strong>
           </div>
         </div>
 
-        <button id="telegramButton" class="secondary-button" type="button">
-          Open Telegram Bot
-        </button>
+        <footer class="footer">
+          <p>Powered by <strong>Telegram WebApp</strong> & <strong>Stripe</strong></p>
+          <p class="security-note">🔐 Your payment is secure and encrypted</p>
+        </footer>
       </main>
     </div>
 
