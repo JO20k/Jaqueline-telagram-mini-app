@@ -1,7 +1,6 @@
 :root {
   --bg: #120b16;
   --panel: rgba(24, 16, 29, 0.9);
-  --panel-alt: rgba(37, 25, 42, 0.78);
   --panel-border: rgba(214, 176, 255, 0.14);
   --text: #f9f1ff;
   --muted: #d9c7ea;
@@ -375,7 +374,6 @@ body.light-theme {
 body.light-theme {
   --bg: #f9f4ff;
   --panel: rgba(255, 255, 255, 0.9);
-  --panel-alt: rgba(250,245,255,0.85);
   --panel-border: rgba(121, 76, 154, 0.12);
   --text: #1d1528;
   --muted: #534760;
@@ -400,4 +398,3 @@ body.light-theme {
     grid-template-columns: 1fr;
   }
 }
-

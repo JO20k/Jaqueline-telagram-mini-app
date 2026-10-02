@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="description" content="Jacqueline's VIP Club — a luxury boutique subscription and exclusive pay-per-view collection." />
+    <meta name="description" content="Jacqueline's VIP Boutique — monthly subscription and premium pay-per-view access." />
     <meta name="theme-color" content="#120b16" />
-    <title>Jacqueline | VIP Boutique</title>
+    <title>Jacqueline VIP Boutique</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -23,27 +23,27 @@
       </header>
 
       <main class="card">
-        <div class="hero-block">
+        <section class="hero-block">
           <div class="hero-kicker">Exclusive Members Club</div>
           <h1>Jacqueline VIP Boutique</h1>
           <p class="subtitle">
-            A private membership for premium access, curated releases, and elevated digital experiences.
+            Private monthly access, premium drops, and exclusive content curated for members.
           </p>
-        </div>
+        </section>
 
         <div class="feature-row">
           <div class="feature-item">
             <span class="feature-icon">✧</span>
             <div>
               <strong>Private Access</strong>
-              <span>Members-only channel and curated drops</span>
+              <span>Members-only channel access</span>
             </div>
           </div>
           <div class="feature-item">
             <span class="feature-icon">◌</span>
             <div>
               <strong>Luxury Content</strong>
-              <span>Elevated selections with premium presentation</span>
+              <span>Higher-end digital releases</span>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
             <ul class="plan-list">
               <li>VIP channel access</li>
               <li>Monthly exclusive drops</li>
-              <li>Early access to releases</li>
+              <li>Early access to new releases</li>
             </ul>
             <a id="subscriptionButton" class="primary-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">
               Join the VIP Membership
@@ -75,7 +75,7 @@
               <span class="ppv-price">$9</span>
             </div>
             <h2>Collection No. 01</h2>
-            <p>Luxury digital release for a single premium purchase. Replace with your real title and checkout URL.</p>
+            <p>Example premium digital release. Replace this with your real title and exact checkout link whenever ready.</p>
             <a class="ppv-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Purchase</a>
           </article>
 
@@ -85,7 +85,7 @@
               <span class="ppv-price">$15</span>
             </div>
             <h2>Collection No. 02</h2>
-            <p>Signature premium bundle. Update the title and link later when your final PPV assets are ready.</p>
+            <p>Example premium bundle. Edit the label, price, and Stripe link to match your own content items.</p>
             <a class="ppv-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Purchase</a>
           </article>
 
@@ -95,7 +95,7 @@
               <span class="ppv-price">$25</span>
             </div>
             <h2>Collection No. 03</h2>
-            <p>Curated premium release made for members seeking a higher-end exclusive purchase.</p>
+            <p>Example collector release for a more premium one-off purchase. Replace with your exact PPV product later.</p>
             <a class="ppv-button" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Purchase</a>
           </article>
         </section>
@@ -124,40 +124,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
