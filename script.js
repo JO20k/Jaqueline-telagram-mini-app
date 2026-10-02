@@ -1,28 +1,26 @@
 :root {
-  --bg-dark: #130b15;
-  --bg-mid: #1b101d;
-  --panel: rgba(23, 16, 28, 0.96);
-  --panel-border: rgba(214, 176, 255, 0.14);
-  --text: #f7f0ff;
-  --muted: #d9c7ea;
-  --gold: #f0d39a;
-  --gold-soft: #d9b77f;
-  --lavender: #d7b9ff;
-  --lavender-strong: #b57ef8;
-  --button-text: #171018;
-  --card-bg: rgba(255,255,255,0.025);
+  --bg: #0d0d14;
+  --panel: rgba(19, 20, 31, 0.86);
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --text: #f5f7ff;
+  --muted: #c8cde0;
+  --accent: #8d5cf6;
+  --accent-strong: #6c3ce1;
+  --success: #26d07c;
+  --button-text: #ffffff;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html, body {
   margin: 0;
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
   background:
-    radial-gradient(circle at top, rgba(181, 126, 248, 0.25), transparent 30%),
-    radial-gradient(circle at bottom, rgba(240, 211, 154, 0.08), transparent 25%),
-    linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-mid) 100%);
+    radial-gradient(circle at top, rgba(141, 92, 246, 0.25), transparent 30%),
+    linear-gradient(180deg, #090910 0%, #0f1021 100%);
   color: var(--text);
 }
 
@@ -33,287 +31,431 @@ body {
   padding: 24px 16px 40px;
 }
 
-.page-shell {
-  width: min(100%, 500px);
+.app-shell {
+  width: min(100%, 440px);
 }
 
 .topbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  align-items: center;
+  margin-bottom: 18px;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.82rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: 1.05rem;
   font-weight: 700;
 }
 
 .brand-mark {
-  color: var(--gold);
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
-.theme-btn,
-.cta-button,
-.telegram-button {
+.ghost-button,
+.primary-button,
+.secondary-button,
+.ppv-button {
   border: none;
   border-radius: 14px;
   font: inherit;
   cursor: pointer;
-  transition: transform 0.18s ease, opacity 0.18s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.theme-btn:hover,
-.cta-button:hover,
-.telegram-button:hover {
+.ghost-button:hover,
+.primary-button:hover,
+.secondary-button:hover,
+.ppv-button:hover {
   transform: translateY(-1px);
 }
 
-.theme-btn {
-  background: rgba(255,255,255,0.06);
+.ghost-button {
+  background: rgba(255, 255, 255, 0.08);
   color: var(--text);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 10px 12px;
+  padding: 10px 14px;
 }
 
-.luxury-card {
-  background: linear-gradient(180deg, rgba(31, 21, 36, 0.97), rgba(19, 13, 23, 0.98));
+.card {
+  background: var(--panel);
   border: 1px solid var(--panel-border);
   border-radius: 28px;
-  padding: 24px 18px 20px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+  backdrop-filter: blur(12px);
+  padding: 26px 20px 20px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
 }
 
-.hero-copy {
+.hero-section {
   text-align: center;
-  padding-bottom: 8px;
 }
 
-.eyebrow {
+.hero-badge {
   display: inline-block;
-  margin-bottom: 12px;
-  color: #efdfff;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.68rem;
+  background: rgba(141, 92, 246, 0.12);
+  color: #d9caff;
+  border: 1px solid rgba(141, 92, 246, 0.35);
   padding: 7px 12px;
   border-radius: 999px;
-  background: rgba(214, 176, 255, 0.08);
-  border: 1px solid rgba(214, 176, 255, 0.18);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
 }
 
 h1 {
   margin: 0;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.5rem, 7vw, 3.4rem);
-  line-height: 0.94;
-  letter-spacing: 0.02em;
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  line-height: 1.05;
 }
 
-.hero-copy p {
-  margin: 12px auto 0;
-  max-width: 28ch;
+.subtitle {
+  margin-top: 14px;
   color: var(--muted);
+  font-size: 0.95rem;
   line-height: 1.6;
-  font-size: 0.96rem;
-}
-
-.membership-panel {
-  margin-top: 24px;
-  background: linear-gradient(180deg, rgba(37,27,43,0.96), rgba(18,12,21,0.98));
-  border: 1px solid rgba(214,176,255,0.18);
-  border-radius: 22px;
-  padding: 18px 16px 20px;
-}
-
-.plan-header {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.micro-label {
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.7rem;
-}
-
-.plan-price {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem;
-  line-height: 0.9;
-  font-weight: 700;
-}
-
-.plan-meta {
-  margin-top: 6px;
-  color: var(--muted);
-  font-size: 0.78rem;
 }
 
 .feature-list {
-  margin: 18px 0 20px;
-  padding-left: 18px;
+  margin-top: 22px;
   display: grid;
-  gap: 10px;
+  gap: 16px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 10px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.feature-item .icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  background: rgba(141, 92, 246, 0.12);
+  border-radius: 12px;
+  font-size: 1.2rem;
+}
+
+.feature-item strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.98rem;
+}
+
+.feature-item p {
+  margin: 0;
   color: var(--muted);
   font-size: 0.84rem;
+  line-height: 1.5;
 }
 
-.feature-list li::marker {
-  color: var(--gold);
+.pricing-panel {
+  margin-top: 22px;
+  padding: 18px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255,255,255,0.06);
 }
 
-.cta-button,
-.telegram-button {
+.price-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.price-amount {
+  margin-top: 8px;
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.price-subtext {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.price-benefits {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+
+.benefit {
+  font-size: 0.78rem;
+  color: var(--success);
+}
+
+.primary-button,
+.secondary-button,
+.ppv-button {
   display: inline-flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  min-height: 54px;
+  padding: 16px 18px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 0.95rem;
+  margin-top: 16px;
 }
 
-.cta-button.primary {
-  background: linear-gradient(135deg, var(--gold) 0%, var(--lavender) 100%);
+.primary-button {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
   color: var(--button-text);
-  box-shadow: 0 10px 26px rgba(214,176,255,0.22);
 }
 
 .ppv-section {
-  margin-top: 28px;
+  margin-top: 26px;
 }
 
-.section-heading {
+.section-title {
   margin-bottom: 12px;
-  color: var(--gold);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.7rem;
-  font-weight: 700;
+  color: var(--muted);
 }
 
-.ppv-item {
-  background: var(--card-bg);
+.ppv-card {
+  background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.05);
   border-radius: 18px;
   padding: 16px 14px;
   margin-bottom: 12px;
 }
 
-.ppv-top {
+.ppv-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 12px;
 }
 
 .ppv-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 24px;
+  display: inline-block;
+  background: rgba(141, 92, 246, 0.12);
+  color: #d9caff;
+  border: 1px solid rgba(141, 92, 246, 0.35);
   padding: 5px 8px;
   border-radius: 999px;
-  background: rgba(214,176,255,0.09);
-  border: 1px solid rgba(214,176,255,0.18);
-  color: #eedbff;
   font-size: 0.62rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.ppv-price {
-  color: var(--gold);
-  font-weight: 800;
-  font-size: 1.5rem;
+.ppv-card h2 {
+  margin: 10px 0 0;
+  font-size: 1.1rem;
 }
 
-.ppv-item h2 {
-  margin: 12px 0 8px;
-  font-size: 1.2rem;
-}
-
-.ppv-item p {
-  margin: 0 0 14px;
+.ppv-card p {
+  margin: 10px 0 12px;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.5;
   font-size: 0.84rem;
 }
 
-.cta-button.secondary,
-.telegram-button {
-  background: rgba(255,255,255,0.04);
+.ppv-price {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--success);
+}
+
+.ppv-button,
+.secondary-button {
+  background: rgba(255,255,255,0.06);
   color: var(--text);
   border: 1px solid rgba(255,255,255,0.08);
 }
 
-.meta-row {
+.meta-grid {
+  margin-top: 28px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 24px;
 }
 
 .meta-box {
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.05);
   border-radius: 16px;
-  padding: 14px 12px;
   text-align: center;
+  padding: 14px 12px;
 }
 
-.meta-box span {
+.meta-label {
   display: block;
   margin-bottom: 6px;
   color: var(--muted);
-  text-transform: uppercase;
+  font-size: 0.68rem;
   letter-spacing: 0.08em;
-  font-size: 0.66rem;
+  text-transform: uppercase;
 }
 
 .meta-box strong {
-  font-size: 0.9rem;
+  display: block;
+  font-size: 0.92rem;
 }
 
-.cta-row {
+.button-group {
   margin-top: 18px;
+}
+
+.footer {
+  margin-top: 22px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.72rem;
 }
 
 body.light-theme {
   background:
-    radial-gradient(circle at top, rgba(181, 126, 248, 0.12), transparent 25%),
-    linear-gradient(180deg, #f9f4ff 0%, #efe8ff 100%);
+    radial-gradient(circle at top, rgba(141, 92, 246, 0.15), transparent 30%),
+    linear-gradient(180deg, #f5f7ff 0%, #edf2ff 100%);
 }
 
 body.light-theme {
-  --bg-dark: #f9f4ff;
-  --bg-mid: #efe8ff;
-  --panel: rgba(255,255,255,0.92);
-  --panel-border: rgba(120,78,154,0.14);
-  --text: #1d1528;
-  --muted: #574760;
-  --gold: #a9771a;
-  --gold-soft: #8f6717;
-  --lavender: #bd89ff;
-  --lavender-strong: #8b4ae6;
-  --button-text: #fff;
-  --card-bg: rgba(115,78,136,0.02);
+  --bg: #f5f7ff;
+  --panel: rgba(255,255,255,0.9);
+  --panel-border: rgba(17, 24, 39, 0.08);
+  --text: #111827;
+  --muted: #4b5563;
+  --button-text: #ffffff;
 }
 
 @media (max-width: 420px) {
-  body { padding-inline: 12px; }
-  .luxury-card { padding-inline: 14px; }
-  .meta-row { grid-template-columns: 1fr; }
-  .ppv-top { flex-direction: column; align-items: flex-start; }
+  .card {
+    padding: 20px 16px 18px;
+  }
+
+  .ppv-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
