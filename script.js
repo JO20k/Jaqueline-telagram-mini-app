@@ -1,16 +1,14 @@
 :root {
   --bg: #120b16;
-  --panel: rgba(24, 16, 29, 0.9);
+  --panel: rgba(26, 18, 31, 0.94);
   --panel-border: rgba(214, 176, 255, 0.14);
   --text: #f9f1ff;
   --muted: #d9c7ea;
-  --accent: #d4a7ff;
+  --accent: #d9b8ff;
   --accent-strong: #a95cf2;
   --soft-gold: #f0d39a;
-  --button-text: #1b1028;
-  --success: #c9f2d1;
-  --safe-area-top: max(24px, env(safe-area-inset-top));
-  --safe-area-bottom: max(24px, env(safe-area-inset-bottom));
+  --button-text: #1a1026;
+  --card-bg: rgba(255,255,255,0.025);
 }
 
 * {
@@ -23,7 +21,6 @@ html, body {
   font-family: 'Inter', sans-serif;
   background:
     radial-gradient(circle at top, rgba(169, 92, 242, 0.24), transparent 30%),
-    radial-gradient(circle at bottom, rgba(240, 211, 154, 0.08), transparent 25%),
     linear-gradient(180deg, #0d0811 0%, #120b16 100%);
   color: var(--text);
 }
@@ -32,29 +29,28 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: var(--safe-area-top) 16px var(--safe-area-bottom);
+  padding: 24px 16px 40px;
 }
 
-.app-shell {
-  width: 100%;
-  max-width: 500px;
+.shell {
+  width: min(100%, 480px);
 }
 
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 1.1rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.9rem;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
 .brand-mark {
@@ -62,180 +58,114 @@ body {
   font-size: 1.2rem;
 }
 
-.ghost-button,
+.theme-toggle,
 .primary-button,
 .secondary-button,
-.ppv-button {
+.telegram-button {
   border: none;
   border-radius: 14px;
   font: inherit;
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.ghost-button:hover,
+.theme-toggle:hover,
 .primary-button:hover,
 .secondary-button:hover,
-.ppv-button:hover {
+.telegram-button:hover {
   transform: translateY(-1px);
 }
 
-.ghost-button {
+.theme-toggle {
   background: rgba(255,255,255,0.06);
   color: var(--text);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 10px 14px;
-  min-width: 42px;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px 12px;
 }
 
-.card {
-  background: linear-gradient(180deg, rgba(27, 18, 35, 0.96) 0%, rgba(26, 18, 31, 0.92) 100%);
+.panel {
+  background: linear-gradient(180deg, rgba(27, 18, 35, 0.96), rgba(23, 16, 29, 0.98));
   border: 1px solid var(--panel-border);
   border-radius: 28px;
-  backdrop-filter: blur(12px);
-  padding: 24px 18px 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  padding: 22px 18px 20px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.22);
 }
 
-.hero-block {
+.hero {
   text-align: center;
-  padding: 6px 6px 10px;
+  padding: 6px 4px 10px;
 }
 
-.hero-kicker {
+.eyebrow {
   display: inline-block;
-  margin-bottom: 14px;
-  border-radius: 999px;
   padding: 7px 12px;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
+  border-radius: 999px;
+  background: rgba(214, 176, 255, 0.08);
+  border: 1px solid rgba(214, 176, 255, 0.18);
+  color: #efdfff;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  background: rgba(212, 167, 255, 0.08);
-  border: 1px solid rgba(212, 167, 255, 0.18);
-  color: #efdbff;
+  font-size: 0.68rem;
+  margin-bottom: 14px;
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(2.2rem, 7vw, 3rem);
-  line-height: 0.95;
   font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.3rem, 7vw, 3rem);
+  line-height: 0.96;
   letter-spacing: 0.02em;
 }
 
-.subtitle {
+.hero p {
   margin: 12px auto 0;
-  max-width: 30ch;
+  max-width: 28ch;
   color: var(--muted);
-  font-size: 0.98rem;
+  font-size: 0.96rem;
   line-height: 1.6;
 }
 
-.feature-row {
-  display: grid;
-  gap: 12px;
-  margin-top: 24px;
+.box {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 18px 16px;
+  margin-top: 22px;
 }
 
-.feature-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255,255,255,0.04);
-  border-radius: 18px;
-  padding: 14px 12px;
-}
-
-.feature-icon {
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
-  background: rgba(212, 167, 255, 0.12);
+.box-label {
   color: var(--soft-gold);
-  font-size: 1.1rem;
-  flex-shrink: 0;
-}
-
-.feature-item strong,
-.feature-item span {
-  display: block;
-}
-
-.feature-item strong {
-  margin-bottom: 4px;
-  font-size: 0.94rem;
-}
-
-.feature-item span {
-  color: var(--muted);
-  font-size: 0.8rem;
-  line-height: 1.5;
-}
-
-.pricing-section {
-  margin-top: 26px;
-}
-
-.pricing-panel {
-  background: linear-gradient(180deg, rgba(37,25,42,0.9) 0%, rgba(21,15,27,0.96) 100%);
-  border: 1px solid rgba(212, 167, 255, 0.24);
-  border-radius: 24px;
-  padding: 18px 16px 20px;
-  box-shadow: inset 0 0 0 1px rgba(240,211,154,0.06);
-}
-
-.plan-label {
-  color: var(--soft-gold);
-  letter-spacing: 0.08em;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  font-size: 0.72rem;
-  margin-bottom: 10px;
+  letter-spacing: 0.12em;
 }
 
-.plan-price {
+.price {
+  margin-top: 10px;
   font-size: 2.8rem;
-  line-height: 1;
   font-weight: 800;
+  line-height: 1;
   font-family: 'Cormorant Garamond', serif;
-  margin-bottom: 4px;
 }
 
-.plan-meta {
+.subtext {
   color: var(--muted);
   font-size: 0.8rem;
-  margin-bottom: 16px;
+  margin-top: 6px;
 }
 
-.plan-list {
-  list-style: none;
-  margin: 0 0 18px;
-  padding: 0;
-  text-align: left;
-  display: grid;
-  gap: 10px;
-}
-
-.plan-list li {
-  position: relative;
+.box ul {
+  margin: 18px 0 18px;
   padding-left: 18px;
   color: var(--muted);
-  font-size: 0.84rem;
-}
-
-.plan-list li::before {
-  content: '✦';
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--soft-gold);
+  display: grid;
+  gap: 8px;
+  font-size: 0.82rem;
 }
 
 .primary-button,
 .secondary-button,
-.ppv-button {
+.telegram-button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -246,155 +176,142 @@ h1 {
 }
 
 .primary-button {
-  background: linear-gradient(135deg, #f0d39a 0%, #d4a7ff 100%);
+  background: linear-gradient(135deg, var(--soft-gold) 0%, var(--accent) 100%);
   color: var(--button-text);
-  box-shadow: 0 10px 28px rgba(212, 167, 255, 0.23);
-}
-
-.secondary-button {
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 26px rgba(214, 176, 255, 0.25);
 }
 
 .ppv-section {
   margin-top: 28px;
 }
 
-.section-header {
+.section-title {
   margin-bottom: 12px;
   color: var(--soft-gold);
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 700;
 }
 
-.ppv-card {
-  background: rgba(255,255,255,0.02);
+.ppv-item {
+  background: var(--card-bg);
   border: 1px solid rgba(255,255,255,0.05);
   border-radius: 18px;
   padding: 16px 14px;
   margin-bottom: 12px;
 }
 
-.ppv-topline {
+.ppv-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
 }
 
-.ppv-tag {
+.tag {
   display: inline-block;
-  border-radius: 999px;
   padding: 5px 8px;
-  background: rgba(212, 167, 255, 0.09);
-  border: 1px solid rgba(212, 167, 255, 0.16);
-  color: #ebd8ff;
+  border-radius: 999px;
+  background: rgba(214,176,255,0.08);
+  border: 1px solid rgba(214,176,255,0.18);
+  color: #eedbff;
   font-size: 0.62rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .ppv-price {
+  color: var(--soft-gold);
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--soft-gold);
 }
 
-.ppv-card h2 {
+.ppv-item h2 {
   margin: 12px 0 8px;
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.15rem;
 }
 
-.ppv-card p {
-  margin: 0 0 12px;
+.ppv-item p {
+  margin: 0 0 14px;
   color: var(--muted);
   font-size: 0.85rem;
   line-height: 1.6;
 }
 
-.ppv-button {
+.secondary-button,
+.telegram-button {
   background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
   color: var(--text);
-  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 .meta-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 26px;
+  margin-top: 24px;
 }
 
-.meta-card {
+.meta-box {
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.05);
   border-radius: 16px;
-  padding: 14px 12px;
   text-align: center;
+  padding: 14px 12px;
 }
 
-.meta-label {
+.meta-box span {
   display: block;
-  margin-bottom: 6px;
   color: var(--muted);
+  margin-bottom: 6px;
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.meta-card strong {
-  display: block;
-  font-size: 0.92rem;
+.meta-box strong {
+  font-size: 0.9rem;
 }
 
 .cta-row {
   margin-top: 18px;
 }
 
-.footer {
-  margin-top: 24px;
-  text-align: center;
-  color: var(--muted);
-  font-size: 0.75rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
 body.light-theme {
   background:
-    radial-gradient(circle at top, rgba(169, 92, 242, 0.12), transparent 28%),
-    linear-gradient(180deg, #f9f4ff 0%, #f2ecff 100%);
+    radial-gradient(circle at top, rgba(169, 92, 242, 0.1), transparent 28%),
+    linear-gradient(180deg, #f9f4ff 0%, #f1ebff 100%);
 }
 
 body.light-theme {
   --bg: #f9f4ff;
-  --panel: rgba(255, 255, 255, 0.9);
-  --panel-border: rgba(121, 76, 154, 0.12);
+  --panel: rgba(255,255,255,0.9);
+  --panel-border: rgba(120, 78, 154, 0.12);
   --text: #1d1528;
-  --muted: #534760;
-  --accent: #be88ff;
-  --accent-strong: #8b4ae6;
-  --soft-gold: #b17a1d;
-  --button-text: #fef9ff;
+  --muted: #4e425d;
+  --accent: #b36cf7;
+  --accent-strong: #7d38d8;
+  --soft-gold: #b57e19;
+  --button-text: #fff;
+  --card-bg: rgba(115, 78, 136, 0.02);
 }
 
 @media (max-width: 420px) {
-  .card {
-    border-radius: 24px;
-    padding: 20px 14px 18px;
+  body {
+    padding-inline: 12px;
   }
 
-  .ppv-topline {
-    flex-direction: column;
-    align-items: flex-start;
+  .panel {
+    padding-inline: 14px;
   }
 
   .meta-grid {
     grid-template-columns: 1fr;
+  }
+
+  .ppv-head {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

@@ -1,32 +1,18 @@
 const CONFIG = {
   botUsername: 'Jaquelines_Payment_bot',
-  stripeUrl: 'https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00',
   botLink: 'https://t.me/Jaquelines_Payment_bot',
-  subscriptionLabel: '$35.00 USD / month'
+  stripeUrl: 'https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00'
 };
 
-const botValue = document.getElementById('botValue');
 const telegramButton = document.getElementById('telegramButton');
-const subscriptionButton = document.getElementById('subscriptionButton');
 const themeButton = document.getElementById('themeButton');
 
 init();
 
 function init() {
-  setValues();
   bindEvents();
   applyStoredTheme();
   initTelegramWebApp();
-}
-
-function setValues() {
-  if (botValue) {
-    botValue.textContent = '@' + CONFIG.botUsername;
-  }
-
-  if (subscriptionButton) {
-    subscriptionButton.href = CONFIG.stripeUrl;
-  }
 }
 
 function bindEvents() {
@@ -77,8 +63,8 @@ function initTelegramWebApp() {
 }
 
 function applyTelegramTheme(tg) {
-  const root = document.documentElement;
   const theme = tg.themeParams;
+  const root = document.documentElement;
 
   if (!theme) return;
 
@@ -92,3 +78,142 @@ function applyTelegramTheme(tg) {
 window.isTelegramWebApp = function () {
   return typeof window.Telegram !== 'undefined' && !!window.Telegram.WebApp;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
