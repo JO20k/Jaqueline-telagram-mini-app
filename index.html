@@ -1,105 +1,558 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="description" content="Jacqueline VIP Boutique — monthly subscription and curated premium content." />
-    <meta name="theme-color" content="#120b14" />
-    <title>Jacqueline VIP Boutique</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>\n    <div class="page-shell">
-      <header class="topbar">
-        <div class="brand">
-          <span class="brand-mark">✦</span>
-          <span>Jacqueline</span>
-        </div>
-        <button id="themeButton" class="theme-btn" type="button" aria-label="Toggle theme">◐</button>
-      </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Jacqueline VIP Boutique</title>
+  <!-- Telegram Web App SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0c10;
+      --card-bg: rgba(22, 27, 38, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover-border: rgba(236, 72, 153, 0.4);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-pink: #f43f5e;
+      --accent-purple: #a855f7;
+      --accent-gold: #fbbf24;
+      --accent-gradient: linear-gradient(135deg, #f43f5e 0%, #ec4899 45%, #a855f7 100%);
+      --gold-gradient: linear-gradient(135deg, #f59e0b, #fbbf24);
+    }
 
-      <main class="luxury-card">
-        <div class="hero-copy">
-          <div class="eyebrow">Private members club</div>
-          <h1>Jacqueline VIP Boutique</h1>
-          <p>
-            Premium monthly access and exclusive releases crafted for a more elevated private experience.
-          </p>
-        </div>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-        <section class="membership-panel">
-          <div class="plan-header">
-            <span class="micro-label">Monthly Membership</span>
-            <span class="plan-price">$35</span>
-          </div>
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 10% 10%, rgba(244, 63, 94, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 45%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      padding: 16px 16px 40px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-          <div class="plan-meta">USD / month</div>
+    /* Top User Bar */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      border-radius: 40px;
+      backdrop-filter: blur(12px);
+    }
 
-          <ul class="feature-list">
-            <li>Private VIP channel access</li>
-            <li>Exclusive monthly drops</li>
-            <li>Early access to premium releases</li>
-          </ul>
+    .user-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-          <a class="cta-button primary" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">
-            Join the VIP Membership
-          </a>
-        </section>
+    .user-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--accent-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
 
-        <section class="ppv-section">
-          <div class="section-heading">Pay-Per-View</div>
+    .user-greeting {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
 
-          <article class="ppv-item">
-            <div class="ppv-top">
-              <span class="ppv-tag">Limited release</span>
-              <span class="ppv-price">$9</span>
-            </div>
-            <h2>Collection No. 01</h2>
-            <p>Example premium digital drop. Replace this with your real title and checkout link when ready.</p>
-            <a class="cta-button secondary" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Purchase</a>
-          </article>
+    .vip-status-badge {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(251, 191, 36, 0.15);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      color: var(--accent-gold);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
 
-          <article class="ppv-item">
-            <div class="ppv-top">
-              <span class="ppv-tag">Featured drop</span>
-              <span class="ppv-price">$15</span>
-            </div>
-            <h2>Collection No. 02</h2>
-            <p>Example signature bundle. Swap in your exact content offer later to keep the layout polished.</p>
-            <a class="cta-button secondary" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Purchase</a>
-          </article>
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 6px 4px 2px;
+    }
 
-          <article class="ppv-item">
-            <div class="ppv-top">
-              <span class="ppv-tag">Collector's edit</span>
-              <span class="ppv-price">$25</span>
-            </div>
-            <h2>Collection No. 03</h2>
-            <p>Example premium collection tailored to a single high-value purchase opportunity.</p>
-            <a class="cta-button secondary" href="https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00" target="_blank" rel="noopener noreferrer">Purchase</a>
-          </article>
-        </section>
+    .brand-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
 
-        <div class="meta-row">
-          <div class="meta-box">
-            <span>Bot</span>
-            <strong>@Jaquelines_Payment_bot</strong>
-          </div>
-          <div class="meta-box">
-            <span>Status</span>
-            <strong>Private & premium</strong>
-          </div>
-        </div>
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
 
-        <div class="cta-row">
-          <button id="telegramButton" class="telegram-button" type="button">Open Telegram Bot</button>
-        </div>
-      </main>
+    .hero-subtitle {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    /* Featured VIP Pass Card */
+    .vip-pass-card {
+      background: linear-gradient(160deg, rgba(30, 27, 46, 0.9) 0%, rgba(20, 20, 32, 0.95) 100%);
+      border: 1px solid rgba(244, 63, 94, 0.35);
+      border-radius: 24px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 16px 36px -10px rgba(244, 63, 94, 0.3);
+    }
+
+    .vip-pass-card::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, rgba(244, 63, 94, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .highlight-badge {
+      background: var(--accent-gradient);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(244, 63, 94, 0.4);
+    }
+
+    .price-wrap {
+      text-align: right;
+    }
+
+    .price-wrap .amount {
+      font-size: 30px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1;
+    }
+
+    .price-wrap .period {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .benefits-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #e2e8f0;
+    }
+
+    .benefit-check {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(244, 63, 94, 0.2);
+      color: var(--accent-pink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* Primary CTA Button */
+    .btn-primary {
+      width: 100%;
+      background: var(--accent-gradient);
+      color: #ffffff;
+      border: none;
+      padding: 16px;
+      border-radius: 16px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 8px 24px -4px rgba(244, 63, 94, 0.5);
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+
+    .btn-primary:active {
+      transform: scale(0.98);
+      filter: brightness(0.95);
+    }
+
+    /* Section Separator */
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      padding: 0 4px;
+    }
+
+    .section-head h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.2px;
+    }
+
+    .section-head span {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Collection Cards Grid */
+    .collections-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .collection-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .collection-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .col-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #cbd5e1;
+    }
+
+    .col-price {
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .col-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .col-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .btn-secondary {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      padding: 13px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+
+    .btn-secondary:active {
+      transform: scale(0.98);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* Trust Footer */
+    .trust-footer {
+      text-align: center;
+      margin-top: 10px;
+      padding: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .stripe-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 5px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top User Status Bar -->
+  <div class="top-bar">
+    <div class="user-pill">
+      <div class="user-avatar" id="avatar-letter">J</div>
+      <div>
+        <div class="user-greeting" id="user-display">Welcome 👋</div>
+      </div>
+    </div>
+    <div class="vip-status-badge">
+      <span>👑</span> VIP Pass
+    </div>
+  </div>
+
+  <!-- Hero Header -->
+  <div class="hero">
+    <div class="brand-tag">Private Content & Drops</div>
+    <h1 class="hero-title">Jacqueline VIP Boutique</h1>
+    <p class="hero-subtitle">
+      Premium monthly access and exclusive releases crafted for an elevated private experience.
+    </p>
+  </div>
+
+  <!-- Featured Card: Monthly VIP Membership -->
+  <div class="vip-pass-card">
+    <div class="card-top">
+      <span class="highlight-badge">Most Popular</span>
+      <div class="price-wrap">
+        <div class="amount">$35</div>
+        <div class="period">USD / Month</div>
+      </div>
+    </div>
+    <h2 class="card-title">VIP Channel Membership</h2>
+    <p class="card-desc">
+      Unlock continuous admission to Jacqueline's private VIP channel with unreleased material, chats, and monthly priority drops.
+    </p>
+
+    <div class="benefits-list">
+      <div class="benefit-item">
+        <div class="benefit-check">✓</div>
+        <span>Instant Private VIP channel access invite</span>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check">✓</div>
+        <span>Exclusive monthly photo & video drops</span>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check">✓</div>
+        <span>Early access to all premium releases</span>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check">✓</div>
+        <span>Automated delivery directly to your Telegram chat</span>
+      </div>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <button class="btn-primary" onclick="checkout('membership', 35)">
+      <span>💳 Join the VIP Membership ($35)</span>
+    </button>
+  </div>
+
+  <!-- Collections / Pay-Per-View -->
+  <div class="section-head">
+    <h3>Pay-Per-View Drops</h3>
+    <span>Direct Downloads</span>
+  </div>
+
+  <div class="collections-list">
+    <!-- Collection 1 -->
+    <div class="collection-card">
+      <div class="collection-header">
+        <span class="col-badge">Limited Release</span>
+        <div class="col-price">$9</div>
+      </div>
+      <div>
+        <div class="col-title">Collection No. 01</div>
+        <div class="col-desc">
+          Exclusive digital photo set with high-resolution original files. Delivered instantly upon checkout.
+        </div>
+      </div>
+      <button class="btn-secondary" onclick="checkout('col1', 9)">
+        <span>📸 Purchase Collection No. 01 ($9)</span>
+      </button>
+    </div>
+
+    <!-- Collection 2 -->
+    <div class="collection-card">
+      <div class="collection-header">
+        <span class="col-badge">Featured Drop</span>
+        <div class="col-price">$15</div>
+      </div>
+      <div>
+        <div class="col-title">Collection No. 02</div>
+        <div class="col-desc">
+          Signature photo & video bundle. Enhanced digital gallery featuring unreleased angles and formats.
+        </div>
+      </div>
+      <button class="btn-secondary" onclick="checkout('col2', 15)">
+        <span>✨ Purchase Collection No. 02 ($15)</span>
+      </button>
+    </div>
+
+    <!-- Collection 3 -->
+    <div class="collection-card">
+      <div class="collection-header">
+        <span class="col-badge">Collector's Edit</span>
+        <div class="col-price">$25</div>
+      </div>
+      <div>
+        <div class="col-title">Collection No. 03</div>
+        <div class="col-desc">
+          The comprehensive collector's package tailored into a single high-value digital archive.
+        </div>
+      </div>
+      <button class="btn-secondary" onclick="checkout('col3', 25)">
+        <span>👑 Purchase Collection No. 03 ($25)</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Trust & Security Footer -->
+  <div class="trust-footer">
+    <div class="stripe-badge">
+      <span>🔒</span> Powered by Stripe • 256-bit Encrypted Checkout
+    </div>
+    <div>Bot: @Jaquelines_Payment_bot • Instant Bot Delivery</div>
+  </div>
+
+  <script>
+    // Initialize Telegram WebApp SDK
+    const tg = window.Telegram?.WebApp;
+
+    if (tg) {
+      tg.ready();
+      tg.expand();
+
+      // Read user data from Telegram
+      if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+        const user = tg.initDataUnsafe.user;
+        const name = user.first_name || 'Member';
+        document.getElementById('user-display').textContent = `Hello, ${name}! 👋`;
+        document.getElementById('avatar-letter').textContent = (name[0] || 'J').toUpperCase();
+      }
+    }
+
+    // Checkout handler with Stripe
+    function checkout(itemKey, price) {
+      if (tg && tg.HapticFeedback) {
+        tg.HapticFeedback.impactOccurred('medium');
+      }
+
+      // Base Stripe checkout link from the bot
+      const baseStripeUrl = "https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00";
+      
+      let userId = "guest";
+      if (tg && tg.initDataUnsafe && tg.initDataUnsafe.user) {
+        userId = tg.initDataUnsafe.user.id;
+      }
+
+      // Attach client_reference_id for Stripe webhook processing
+      const finalUrl = `${baseStripeUrl}?client_reference_id=${userId}`;
+
+      if (tg && tg.openLink) {
+        tg.openLink(finalUrl);
+      } else {
+        window.open(finalUrl, '_blank');
+      }
+    }
+  </script>
+</body>
 </html>
