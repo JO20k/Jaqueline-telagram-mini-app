@@ -39,11 +39,11 @@
         radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 45%);
       background-attachment: fixed;
       color: var(--text-main);
-      padding: 16px 16px 40px;
+      padding: 14px 14px 40px;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 16px;
     }
 
     /* Top User Bar */
@@ -51,7 +51,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 14px;
+      padding: 8px 14px;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--card-border);
       border-radius: 40px;
@@ -65,14 +65,14 @@
     }
 
     .user-avatar {
-      width: 34px;
-      height: 34px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       background: var(--accent-gradient);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
       color: #fff;
     }
@@ -98,47 +98,90 @@
       gap: 4px;
     }
 
-    /* Hero Section */
+    /* Brand Header */
     .hero {
       text-align: center;
-      padding: 6px 4px 2px;
+      padding: 2px 4px 0;
     }
 
     .brand-tag {
       display: inline-block;
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       background: var(--accent-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .hero-title {
       font-family: 'Playfair Display', serif;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 600;
       letter-spacing: -0.5px;
       color: #ffffff;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
 
-    .hero-subtitle {
-      font-size: 13.5px;
+    /* Segmented Navigation Tab Bar */
+    .tab-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      padding: 5px;
+      border-radius: 18px;
+      backdrop-filter: blur(14px);
+    }
+
+    .tab-btn {
+      border: none;
+      background: transparent;
       color: var(--text-muted);
-      line-height: 1.5;
-      max-width: 320px;
-      margin: 0 auto;
+      padding: 11px 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      border-radius: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Featured VIP Pass Card */
+    .tab-btn.active {
+      background: var(--accent-gradient);
+      color: #ffffff;
+      box-shadow: 0 4px 16px rgba(244, 63, 94, 0.4);
+    }
+
+    /* Tab Content Views */
+    .tab-content {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+      animation: fadeIn 0.25s ease forwards;
+    }
+
+    .tab-content.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Featured VIP Pass Card (Tab 1) */
     .vip-pass-card {
       background: linear-gradient(160deg, rgba(30, 27, 46, 0.9) 0%, rgba(20, 20, 32, 0.95) 100%);
       border: 1px solid rgba(244, 63, 94, 0.35);
       border-radius: 24px;
-      padding: 24px;
+      padding: 22px;
       position: relative;
       overflow: hidden;
       box-shadow: 0 16px 36px -10px rgba(244, 63, 94, 0.3);
@@ -159,7 +202,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .highlight-badge {
@@ -179,7 +222,7 @@
     }
 
     .price-wrap .amount {
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 800;
       color: #ffffff;
       line-height: 1;
@@ -193,10 +236,10 @@
     }
 
     .card-title {
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 700;
       color: #ffffff;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .card-desc {
@@ -236,7 +279,6 @@
       flex-shrink: 0;
     }
 
-    /* Primary CTA Button */
     .btn-primary {
       width: 100%;
       background: var(--accent-gradient);
@@ -261,34 +303,39 @@
       filter: brightness(0.95);
     }
 
-    /* Section Separator */
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 10px;
-      padding: 0 4px;
+    /* Perks Grid (Inside Tab 1) */
+    .perks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
     }
 
-    .section-head h3 {
-      font-size: 16px;
+    .perk-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .perk-box .icon {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .perk-box .label {
+      font-size: 13px;
       font-weight: 700;
       color: #ffffff;
-      letter-spacing: -0.2px;
+      margin-bottom: 2px;
     }
 
-    .section-head span {
-      font-size: 12px;
+    .perk-box .sub {
+      font-size: 11.5px;
       color: var(--text-muted);
     }
 
-    /* Collection Cards Grid */
-    .collections-list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
+    /* Collections Cards (Tab 2) */
     .collection-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -296,9 +343,14 @@
       padding: 18px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
       backdrop-filter: blur(14px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      transition: border-color 0.2s ease;
+    }
+
+    .collection-card:hover {
+      border-color: var(--card-hover-border);
     }
 
     .collection-header {
@@ -308,22 +360,30 @@
     }
 
     .col-badge {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 3px 9px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 3px 10px;
       border-radius: 8px;
       background: rgba(255, 255, 255, 0.06);
       color: #cbd5e1;
     }
 
+    .col-badge.gold {
+      background: rgba(251, 191, 36, 0.15);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      color: var(--accent-gold);
+    }
+
     .col-price {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 800;
       color: #ffffff;
     }
 
     .col-title {
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 4px;
@@ -340,7 +400,7 @@
       background: rgba(255, 255, 255, 0.07);
       border: 1px solid rgba(255, 255, 255, 0.12);
       color: #ffffff;
-      padding: 13px;
+      padding: 14px;
       border-radius: 14px;
       font-size: 14px;
       font-weight: 600;
@@ -401,58 +461,76 @@
 
   <!-- Hero Header -->
   <div class="hero">
-    <div class="brand-tag">Private Content & Drops</div>
-    <h1 class="hero-title">Jacqueline VIP Boutique</h1>
-    <p class="hero-subtitle">
-      Premium monthly access and exclusive releases crafted for an elevated private experience.
-    </p>
+    <div class="brand-tag">Exclusive Boutique</div>
+    <h1 class="hero-title">Jacqueline VIP</h1>
   </div>
 
-  <!-- Featured Card: Monthly VIP Membership -->
-  <div class="vip-pass-card">
-    <div class="card-top">
-      <span class="highlight-badge">Most Popular</span>
-      <div class="price-wrap">
-        <div class="amount">$35</div>
-        <div class="period">USD / Month</div>
-      </div>
-    </div>
-    <h2 class="card-title">VIP Channel Membership</h2>
-    <p class="card-desc">
-      Unlock continuous admission to Jacqueline's private VIP channel with unreleased material, chats, and monthly priority drops.
-    </p>
-
-    <div class="benefits-list">
-      <div class="benefit-item">
-        <div class="benefit-check">✓</div>
-        <span>Instant Private VIP channel access invite</span>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-check">✓</div>
-        <span>Exclusive monthly photo & video drops</span>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-check">✓</div>
-        <span>Early access to all premium releases</span>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-check">✓</div>
-        <span>Automated delivery directly to your Telegram chat</span>
-      </div>
-    </div>
-
-    <button class="btn-primary" onclick="checkout('membership', 35)">
-      <span>💳 Join the VIP Membership ($35)</span>
+  <!-- Segmented Tab Navigation -->
+  <div class="tab-bar">
+    <button class="tab-btn active" id="btn-tab-membership" onclick="switchTab('membership')">
+      <span>👑 VIP Pass</span>
+    </button>
+    <button class="tab-btn" id="btn-tab-drops" onclick="switchTab('drops')">
+      <span>📸 Content Drops</span>
     </button>
   </div>
 
-  <!-- Collections / Pay-Per-View -->
-  <div class="section-head">
-    <h3>Pay-Per-View Drops</h3>
-    <span>Direct Downloads</span>
+  <!-- TAB 1: VIP MEMBERSHIP -->
+  <div class="tab-content active" id="tab-membership">
+    <div class="vip-pass-card">
+      <div class="card-top">
+        <span class="highlight-badge">Most Popular</span>
+        <div class="price-wrap">
+          <div class="amount">$35</div>
+          <div class="period">USD / Month</div>
+        </div>
+      </div>
+      <h2 class="card-title">VIP Channel Membership</h2>
+      <p class="card-desc">
+        Continuous admission to Jacqueline's private VIP channel with unreleased content, community chat, and priority drops.
+      </p>
+
+      <div class="benefits-list">
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <span>Instant Private VIP channel invite link</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <span>Exclusive monthly photo & video releases</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <span>Early access to all single drops</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <span>Automated direct bot delivery</span>
+        </div>
+      </div>
+
+      <button class="btn-primary" onclick="checkout('vip-membership', 35)">
+        <span>💳 Join VIP Membership ($35)</span>
+      </button>
+    </div>
+
+    <!-- Quick Perks -->
+    <div class="perks-grid">
+      <div class="perk-box">
+        <div class="icon">⚡</div>
+        <div class="label">Instant Access</div>
+        <div class="sub">Invite link in seconds</div>
+      </div>
+      <div class="perk-box">
+        <div class="icon">🔒</div>
+        <div class="label">Private & Safe</div>
+        <div class="sub">Secure Stripe billing</div>
+      </div>
+    </div>
   </div>
 
-  <div class="collections-list">
+  <!-- TAB 2: CONTENT PURCHASES / PPV DROPS -->
+  <div class="tab-content" id="tab-drops">
     <!-- Collection 1 -->
     <div class="collection-card">
       <div class="collection-header">
@@ -462,7 +540,7 @@
       <div>
         <div class="col-title">Collection No. 01</div>
         <div class="col-desc">
-          Exclusive digital photo set with high-resolution original files. Delivered instantly upon checkout.
+          Exclusive digital photo drop with full high-resolution original files. Instant digital delivery after checkout.
         </div>
       </div>
       <button class="btn-secondary" onclick="checkout('col1', 9)">
@@ -479,7 +557,7 @@
       <div>
         <div class="col-title">Collection No. 02</div>
         <div class="col-desc">
-          Signature photo & video bundle. Enhanced digital gallery featuring unreleased angles and formats.
+          Signature photo & video bundle. Enhanced digital gallery featuring unreleased angles and studio sets.
         </div>
       </div>
       <button class="btn-secondary" onclick="checkout('col2', 15)">
@@ -490,17 +568,34 @@
     <!-- Collection 3 -->
     <div class="collection-card">
       <div class="collection-header">
-        <span class="col-badge">Collector's Edit</span>
+        <span class="col-badge gold">Collector's Edit</span>
         <div class="col-price">$25</div>
       </div>
       <div>
         <div class="col-title">Collection No. 03</div>
         <div class="col-desc">
-          The comprehensive collector's package tailored into a single high-value digital archive.
+          The comprehensive collector's package tailored into a complete digital archive bundle.
         </div>
       </div>
       <button class="btn-secondary" onclick="checkout('col3', 25)">
         <span>👑 Purchase Collection No. 03 ($25)</span>
+      </button>
+    </div>
+
+    <!-- Collection 4 / Vault Bundle -->
+    <div class="collection-card">
+      <div class="collection-header">
+        <span class="col-badge gold">Ultimate Vault</span>
+        <div class="col-price">$45</div>
+      </div>
+      <div>
+        <div class="col-title">VIP Deluxe Archive</div>
+        <div class="col-desc">
+          All past drops combined into one master high-resolution package. Maximum value one-time purchase.
+        </div>
+      </div>
+      <button class="btn-secondary" onclick="checkout('deluxe-vault', 45)">
+        <span>💎 Purchase Deluxe Archive ($45)</span>
       </button>
     </div>
   </div>
@@ -510,7 +605,7 @@
     <div class="stripe-badge">
       <span>🔒</span> Powered by Stripe • 256-bit Encrypted Checkout
     </div>
-    <div>Bot: @Jaquelines_Payment_bot • Instant Bot Delivery</div>
+    <div>Bot: @Jaquelines_Payment_bot • Automated Delivery</div>
   </div>
 
   <script>
@@ -530,13 +625,27 @@
       }
     }
 
+    // Switch between tabs
+    function switchTab(tab) {
+      if (tg && tg.HapticFeedback) {
+        tg.HapticFeedback.selectionChanged();
+      }
+
+      // Toggle tab buttons
+      document.getElementById('btn-tab-membership').classList.toggle('active', tab === 'membership');
+      document.getElementById('btn-tab-drops').classList.toggle('active', tab === 'drops');
+
+      // Toggle views
+      document.getElementById('tab-membership').classList.toggle('active', tab === 'membership');
+      document.getElementById('tab-drops').classList.toggle('active', tab === 'drops');
+    }
+
     // Checkout handler with Stripe
     function checkout(itemKey, price) {
       if (tg && tg.HapticFeedback) {
         tg.HapticFeedback.impactOccurred('medium');
       }
 
-      // Base Stripe checkout link from the bot
       const baseStripeUrl = "https://buy.stripe.com/28EeVch2L2pTbtU7uqgIo00";
       
       let userId = "guest";
@@ -544,7 +653,6 @@
         userId = tg.initDataUnsafe.user.id;
       }
 
-      // Attach client_reference_id for Stripe webhook processing
       const finalUrl = `${baseStripeUrl}?client_reference_id=${userId}`;
 
       if (tg && tg.openLink) {
