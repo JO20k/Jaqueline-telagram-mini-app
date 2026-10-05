@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>Jacqueline VIP Boutique</title>
+  <title>Jacqueline VIP Boutique — Skip The PPV</title>
   <!-- Telegram Web App SDK -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +22,7 @@
       --accent-gold: #fbbf24;
       --accent-gradient: linear-gradient(135deg, #f43f5e 0%, #ec4899 45%, #a855f7 100%);
       --gold-gradient: linear-gradient(135deg, #f59e0b, #fbbf24);
+      --green-glow: #10b981;
     }
 
     * {
@@ -35,8 +36,8 @@
     body {
       background-color: var(--bg-dark);
       background-image: 
-        radial-gradient(circle at 10% 10%, rgba(244, 63, 94, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 45%);
+        radial-gradient(circle at 10% 10%, rgba(244, 63, 94, 0.14) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.14) 0%, transparent 45%);
       background-attachment: fixed;
       color: var(--text-main);
       padding: 14px 14px 40px;
@@ -101,28 +102,47 @@
     /* Brand Header */
     .hero {
       text-align: center;
-      padding: 2px 4px 0;
+      padding: 4px 4px 0;
     }
 
     .brand-tag {
-      display: inline-block;
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      background: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 4px;
+      background: rgba(244, 63, 94, 0.15);
+      border: 1px solid rgba(244, 63, 94, 0.3);
+      color: #fda4af;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 8px;
     }
 
     .hero-title {
       font-family: 'Playfair Display', serif;
-      font-size: 26px;
+      font-size: 27px;
       font-weight: 600;
       letter-spacing: -0.5px;
       color: #ffffff;
-      margin-bottom: 4px;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .hero-title span {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+      max-width: 320px;
+      margin: 0 auto;
     }
 
     /* Segmented Navigation Tab Bar */
@@ -187,25 +207,25 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Featured VIP Pass Card (Tab 1) */
+    /* Featured VIP Pass Card (Skip PPV Focus) */
     .vip-pass-card {
-      background: linear-gradient(160deg, rgba(30, 27, 46, 0.9) 0%, rgba(20, 20, 32, 0.95) 100%);
-      border: 1px solid rgba(244, 63, 94, 0.35);
+      background: linear-gradient(160deg, rgba(30, 27, 46, 0.95) 0%, rgba(20, 20, 32, 0.98) 100%);
+      border: 1.5px solid rgba(244, 63, 94, 0.4);
       border-radius: 24px;
-      padding: 22px;
+      padding: 24px;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 16px 36px -10px rgba(244, 63, 94, 0.3);
+      box-shadow: 0 16px 36px -10px rgba(244, 63, 94, 0.35);
     }
 
     .vip-pass-card::before {
       content: "";
       position: absolute;
-      top: -50px;
-      right: -50px;
+      top: -40px;
+      right: -40px;
       width: 140px;
       height: 140px;
-      background: radial-gradient(circle, rgba(244, 63, 94, 0.25) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(244, 63, 94, 0.3) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -233,7 +253,7 @@
     }
 
     .price-wrap .amount {
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 800;
       color: #ffffff;
       line-height: 1;
@@ -247,23 +267,53 @@
     }
 
     .card-title {
-      font-size: 19px;
-      font-weight: 700;
+      font-size: 21px;
+      font-weight: 800;
       color: #ffffff;
       margin-bottom: 6px;
     }
 
     .card-desc {
-      font-size: 13px;
-      color: var(--text-muted);
+      font-size: 13.5px;
+      color: #cbd5e1;
       line-height: 1.5;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
+    }
+
+    /* Comparison Box */
+    .comparison-box {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 14px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .comp-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+    }
+
+    .comp-row.bad {
+      color: #94a3b8;
+      text-decoration: line-through;
+    }
+
+    .comp-row.good {
+      color: #34d399;
+      font-weight: 700;
+      font-size: 13.5px;
     }
 
     .benefits-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 11px;
       margin-bottom: 22px;
     }
 
@@ -271,21 +321,21 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 500;
       color: #e2e8f0;
     }
 
     .benefit-check {
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
-      background: rgba(244, 63, 94, 0.2);
-      color: var(--accent-pink);
+      background: rgba(16, 185, 129, 0.18);
+      color: #34d399;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 800;
       flex-shrink: 0;
     }
@@ -295,17 +345,17 @@
       background: var(--accent-gradient);
       color: #ffffff;
       border: none;
-      padding: 16px;
+      padding: 17px;
       border-radius: 16px;
-      font-size: 15px;
-      font-weight: 700;
+      font-size: 16px;
+      font-weight: 800;
       letter-spacing: 0.3px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      box-shadow: 0 8px 24px -4px rgba(244, 63, 94, 0.5);
+      box-shadow: 0 10px 28px -4px rgba(244, 63, 94, 0.5);
       transition: transform 0.15s ease, filter 0.15s ease;
     }
 
@@ -314,7 +364,7 @@
       filter: brightness(0.95);
     }
 
-    /* Perks Grid (Inside Tab 1) */
+    /* Perks Grid */
     .perks-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -346,79 +396,42 @@
       color: var(--text-muted);
     }
 
-    /* Coming Soon Hero Banner (Tab 2) */
-    .coming-soon-banner {
-      background: linear-gradient(145deg, rgba(244, 63, 94, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
-      border: 1px solid rgba(244, 63, 94, 0.25);
-      border-radius: 22px;
-      padding: 22px;
+    /* Tab 2: Individual PPV Catalog */
+    .ppv-pitch-card {
+      background: linear-gradient(145deg, rgba(244, 63, 94, 0.12) 0%, rgba(168, 85, 247, 0.12) 100%);
+      border: 1px solid rgba(244, 63, 94, 0.3);
+      border-radius: 20px;
+      padding: 18px;
       text-align: center;
-      position: relative;
-      overflow: hidden;
     }
 
-    .coming-soon-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      margin: 0 auto 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .coming-soon-banner h2 {
-      font-size: 20px;
+    .ppv-pitch-card h3 {
+      font-size: 17px;
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 6px;
     }
 
-    .coming-soon-banner p {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.5;
-      max-width: 310px;
-      margin: 0 auto 16px;
-    }
-
-    .vip-early-prompt {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
-      padding: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      text-align: left;
-    }
-
-    .vip-early-prompt span {
-      font-size: 12px;
+    .ppv-pitch-card p {
+      font-size: 12.5px;
       color: #cbd5e1;
-      line-height: 1.4;
+      line-height: 1.45;
+      margin-bottom: 12px;
     }
 
-    .btn-vip-switch {
+    .btn-unlock-all-cta {
       background: var(--accent-gradient);
       color: #fff;
       border: none;
-      padding: 8px 12px;
-      font-size: 12px;
+      padding: 11px 18px;
+      font-size: 13px;
       font-weight: 700;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      white-space: nowrap;
-      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(244, 63, 94, 0.4);
     }
 
-    /* Teaser Collection Cards */
-    .teaser-card {
+    .collection-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 20px;
@@ -427,63 +440,68 @@
       flex-direction: column;
       gap: 12px;
       position: relative;
-      opacity: 0.92;
     }
 
-    .teaser-header {
+    .col-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .badge-lock {
-      font-size: 11px;
+    .col-tag {
+      font-size: 10.5px;
       font-weight: 700;
       letter-spacing: 0.5px;
       text-transform: uppercase;
       padding: 3px 10px;
       border-radius: 8px;
-      background: rgba(244, 63, 94, 0.15);
-      border: 1px solid rgba(244, 63, 94, 0.3);
-      color: #fda4af;
-      display: flex;
-      align-items: center;
-      gap: 4px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #cbd5e1;
     }
 
-    .badge-status {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--accent-gold);
+    .vip-free-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      padding: 3px 10px;
+      border-radius: 8px;
     }
 
-    .teaser-title {
+    .col-title {
       font-size: 17px;
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 4px;
     }
 
-    .teaser-desc {
+    .col-desc {
       font-size: 12.5px;
       color: var(--text-muted);
       line-height: 1.45;
     }
 
-    .btn-locked {
+    .btn-ppv-action {
       width: 100%;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px dashed rgba(255, 255, 255, 0.15);
-      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ffffff;
       padding: 13px;
       border-radius: 14px;
       font-size: 13.5px;
-      font-weight: 600;
-      cursor: not-allowed;
+      font-weight: 700;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .btn-ppv-action:active {
+      transform: scale(0.98);
+      background: rgba(255, 255, 255, 0.1);
     }
 
     /* Trust Footer */
@@ -530,140 +548,158 @@
 
   <!-- Hero Header -->
   <div class="hero">
-    <div class="brand-tag">Exclusive Boutique</div>
-    <h1 class="hero-title">Jacqueline VIP</h1>
+    <div class="brand-tag">⚡ Skip The Pay-Per-View</div>
+    <h1 class="hero-title">Unlock All Content <span>For $35/mo</span></h1>
+    <p class="hero-subtitle">
+      Stop buying individual drops. Get full, instant access to the entire VIP photo & video vault.
+    </p>
   </div>
 
   <!-- Segmented Tab Navigation -->
   <div class="tab-bar">
     <button class="tab-btn active" id="btn-tab-membership" onclick="switchTab('membership')">
-      <span>👑 VIP Pass</span>
+      <span>👑 All-Access VIP ($35)</span>
     </button>
     <button class="tab-btn" id="btn-tab-drops" onclick="switchTab('drops')">
-      <span>📸 Content Drops</span>
-      <span class="tab-badge-pill">Soon</span>
+      <span>📸 PPV Drops</span>
+      <span class="tab-badge-pill">Catalog</span>
     </button>
   </div>
 
-  <!-- TAB 1: VIP MEMBERSHIP -->
+  <!-- TAB 1: ALL-ACCESS VIP PASS (PRIMARY FOCUS) -->
   <div class="tab-content active" id="tab-membership">
     <div class="vip-pass-card">
       <div class="card-top">
-        <span class="highlight-badge">Available Now</span>
+        <span class="highlight-badge">⭐ Best Value</span>
         <div class="price-wrap">
           <div class="amount">$35</div>
           <div class="period">USD / Month</div>
         </div>
       </div>
-      <h2 class="card-title">VIP Channel Membership</h2>
+
+      <h2 class="card-title">All-Inclusive VIP Pass</h2>
       <p class="card-desc">
-        Instant admission to Jacqueline's private VIP channel with unreleased content, community chat, and priority drops.
+        Never pay for individual photo drops again. Your membership unlocks all past, current, and future releases automatically.
       </p>
 
-      <div class="benefits-list">
-        <div class="benefit-item">
-          <div class="benefit-check">✓</div>
-          <span>Instant Private VIP channel invite link</span>
+      <!-- Value Comparison Box -->
+      <div class="comparison-box">
+        <div class="comp-row bad">
+          <span>❌ Buying 3-4 PPV Drops Separately:</span>
+          <span>~$75+</span>
         </div>
-        <div class="benefit-item">
-          <div class="benefit-check">✓</div>
-          <span>Exclusive monthly photo & video releases</span>
-        </div>
-        <div class="benefit-item">
-          <div class="benefit-check">✓</div>
-          <span>48-hour priority access to new content drops</span>
-        </div>
-        <div class="benefit-item">
-          <div class="benefit-check">✓</div>
-          <span>Automated direct delivery to your Telegram</span>
+        <div class="comp-row good">
+          <span>✅ All-Access Monthly VIP Pass:</span>
+          <span>$35 Total</span>
         </div>
       </div>
 
-      <button class="btn-primary" onclick="checkout('vip-membership', 35)">
-        <span>💳 Join VIP Membership ($35)</span>
+      <!-- Perks list -->
+      <div class="benefits-list">
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <span><strong>100% Unlocked Access</strong> to all PPV drops & vaults</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <span><strong>Instant Private VIP Channel</strong> admission link</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <span><strong>High-Resolution</strong> original uncompressed photos & videos</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <span><strong>Priority Releases:</strong> 48 hours before any public drops</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <span><strong>Direct Automated Delivery</strong> straight to Telegram</span>
+        </div>
+      </div>
+
+      <button class="btn-primary" onclick="checkout('all-access-vip', 35)">
+        <span>💳 Skip PPV & Unlock All ($35/mo)</span>
       </button>
     </div>
 
     <!-- Quick Perks -->
     <div class="perks-grid">
       <div class="perk-box">
-        <div class="icon">⚡</div>
-        <div class="label">Instant Delivery</div>
-        <div class="sub">Invite link in seconds</div>
+        <div class="icon">🔓</div>
+        <div class="label">Zero Paywalls</div>
+        <div class="sub">Everything included</div>
       </div>
       <div class="perk-box">
-        <div class="icon">🔒</div>
-        <div class="label">Private & Safe</div>
-        <div class="sub">Encrypted Stripe checkout</div>
+        <div class="icon">⚡</div>
+        <div class="label">Instant Delivery</div>
+        <div class="sub">Channel link in seconds</div>
       </div>
     </div>
   </div>
 
-  <!-- TAB 2: CONTENT SELECTION / COMING SOON -->
+  <!-- TAB 2: PPV DROPS (TEASER CATALOG PROVING VALUE) -->
   <div class="tab-content" id="tab-drops">
-    <!-- Coming Soon Banner -->
-    <div class="coming-soon-banner">
-      <div class="coming-soon-icon">✨</div>
-      <h2>Digital Vault Coming Soon</h2>
+    <!-- Value Pitch Card -->
+    <div class="ppv-pitch-card">
+      <h3>Why Pay For Individual Drops?</h3>
       <p>
-        Individual digital drops and exclusive photo/video collections are currently in curation and will unlock soon.
+        Individual collections normally sell for $9, $15, and $25 each. With the <strong>All-Access VIP Pass ($35/mo)</strong>, all of these are 100% unlocked with zero extra cost.
       </p>
-      
-      <div class="vip-early-prompt">
-        <span>⭐ VIP Members get 48-hour early access and special discounts on every drop.</span>
-        <button class="btn-vip-switch" onclick="switchTab('membership')">Get VIP Pass</button>
-      </div>
+      <button class="btn-unlock-all-cta" onclick="switchTab('membership')">
+        👑 Unlock Everything For $35/mo
+      </button>
     </div>
 
-    <!-- Teaser Card 1 -->
-    <div class="teaser-card">
-      <div class="teaser-header">
-        <span class="badge-lock">🔒 Collection No. 01</span>
-        <span class="badge-status">In Post-Production</span>
+    <!-- Collection 1 -->
+    <div class="collection-card">
+      <div class="col-header">
+        <span class="col-tag">Collection No. 01</span>
+        <span class="vip-free-badge">FREE with VIP</span>
       </div>
       <div>
-        <div class="teaser-title">Limited Photo Release</div>
-        <div class="teaser-desc">
+        <div class="col-title">Limited Photo Set</div>
+        <div class="col-desc">
           High-resolution uncompressed photo set featuring exclusive studio angles.
         </div>
       </div>
-      <div class="btn-locked">
-        <span>🔒 Coming Soon</span>
-      </div>
+      <button class="btn-ppv-action" onclick="switchTab('membership')">
+        <span>👑 Unlock via VIP Pass ($35/mo)</span>
+      </button>
     </div>
 
-    <!-- Teaser Card 2 -->
-    <div class="teaser-card">
-      <div class="teaser-header">
-        <span class="badge-lock">🔒 Collection No. 02</span>
-        <span class="badge-status">Coming Next</span>
+    <!-- Collection 2 -->
+    <div class="collection-card">
+      <div class="col-header">
+        <span class="col-tag">Collection No. 02</span>
+        <span class="vip-free-badge">FREE with VIP</span>
       </div>
       <div>
-        <div class="teaser-title">Signature Media Bundle</div>
-        <div class="teaser-desc">
-          Complete multimedia release with high-definition video clips and photos.
+        <div class="col-title">Signature Media Bundle</div>
+        <div class="col-desc">
+          Multimedia release featuring extended video clips and digital photo galleries.
         </div>
       </div>
-      <div class="btn-locked">
-        <span>🔒 Coming Soon</span>
-      </div>
+      <button class="btn-ppv-action" onclick="switchTab('membership')">
+        <span>👑 Unlock via VIP Pass ($35/mo)</span>
+      </button>
     </div>
 
-    <!-- Teaser Card 3 -->
-    <div class="teaser-card">
-      <div class="teaser-header">
-        <span class="badge-lock">🔒 Deluxe Vault</span>
-        <span class="badge-status">VIP Priority</span>
+    <!-- Collection 3 -->
+    <div class="collection-card">
+      <div class="col-header">
+        <span class="col-tag">Collection No. 03</span>
+        <span class="vip-free-badge">FREE with VIP</span>
       </div>
       <div>
-        <div class="teaser-title">Collector's Archive</div>
-        <div class="teaser-desc">
-          Comprehensive archive collection with private unreleased material.
+        <div class="col-title">Collector's Archive Vault</div>
+        <div class="col-desc">
+          The ultimate master archive collection of unreleased content.
         </div>
       </div>
-      <div class="btn-locked">
-        <span>🔒 Coming Soon</span>
-      </div>
+      <button class="btn-ppv-action" onclick="switchTab('membership')">
+        <span>👑 Unlock via VIP Pass ($35/mo)</span>
+      </button>
     </div>
   </div>
 
@@ -672,7 +708,7 @@
     <div class="stripe-badge">
       <span>🔒</span> Powered by Stripe • 256-bit Encrypted Checkout
     </div>
-    <div>Bot: @Jaquelines_Payment_bot • Automated Delivery</div>
+    <div>Bot: @Jaquelines_Payment_bot • Instant Bot Delivery</div>
   </div>
 
   <script>
@@ -730,5 +766,4 @@
     }
   </script>
 </body>
-    </html>
-  
+</html>
