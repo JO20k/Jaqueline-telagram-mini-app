@@ -159,6 +159,17 @@
       box-shadow: 0 4px 16px rgba(244, 63, 94, 0.4);
     }
 
+    .tab-badge-pill {
+      font-size: 9.5px;
+      padding: 2px 6px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
     /* Tab Content Views */
     .tab-content {
       display: none;
@@ -335,8 +346,79 @@
       color: var(--text-muted);
     }
 
-    /* Collections Cards (Tab 2) */
-    .collection-card {
+    /* Coming Soon Hero Banner (Tab 2) */
+    .coming-soon-banner {
+      background: linear-gradient(145deg, rgba(244, 63, 94, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+      border: 1px solid rgba(244, 63, 94, 0.25);
+      border-radius: 22px;
+      padding: 22px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .coming-soon-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin: 0 auto 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .coming-soon-banner h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .coming-soon-banner p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      max-width: 310px;
+      margin: 0 auto 16px;
+    }
+
+    .vip-early-prompt {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      text-align: left;
+    }
+
+    .vip-early-prompt span {
+      font-size: 12px;
+      color: #cbd5e1;
+      line-height: 1.4;
+    }
+
+    .btn-vip-switch {
+      background: var(--accent-gradient);
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* Teaser Collection Cards */
+    .teaser-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 20px;
@@ -344,77 +426,64 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      backdrop-filter: blur(14px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-      transition: border-color 0.2s ease;
+      position: relative;
+      opacity: 0.92;
     }
 
-    .collection-card:hover {
-      border-color: var(--card-hover-border);
-    }
-
-    .collection-header {
+    .teaser-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .col-badge {
-      font-size: 10.5px;
+    .badge-lock {
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.5px;
       text-transform: uppercase;
       padding: 3px 10px;
       border-radius: 8px;
-      background: rgba(255, 255, 255, 0.06);
-      color: #cbd5e1;
+      background: rgba(244, 63, 94, 0.15);
+      border: 1px solid rgba(244, 63, 94, 0.3);
+      color: #fda4af;
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
 
-    .col-badge.gold {
-      background: rgba(251, 191, 36, 0.15);
-      border: 1px solid rgba(251, 191, 36, 0.3);
+    .badge-status {
+      font-size: 11px;
+      font-weight: 600;
       color: var(--accent-gold);
     }
 
-    .col-price {
-      font-size: 22px;
-      font-weight: 800;
-      color: #ffffff;
-    }
-
-    .col-title {
+    .teaser-title {
       font-size: 17px;
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 4px;
     }
 
-    .col-desc {
+    .teaser-desc {
       font-size: 12.5px;
       color: var(--text-muted);
       line-height: 1.45;
     }
 
-    .btn-secondary {
+    .btn-locked {
       width: 100%;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #ffffff;
-      padding: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px dashed rgba(255, 255, 255, 0.15);
+      color: var(--text-muted);
+      padding: 13px;
       border-radius: 14px;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 600;
-      cursor: pointer;
+      cursor: not-allowed;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      transition: background 0.15s ease, transform 0.15s ease;
-    }
-
-    .btn-secondary:active {
-      transform: scale(0.98);
-      background: rgba(255, 255, 255, 0.12);
+      gap: 6px;
     }
 
     /* Trust Footer */
@@ -472,6 +541,7 @@
     </button>
     <button class="tab-btn" id="btn-tab-drops" onclick="switchTab('drops')">
       <span>📸 Content Drops</span>
+      <span class="tab-badge-pill">Soon</span>
     </button>
   </div>
 
@@ -479,7 +549,7 @@
   <div class="tab-content active" id="tab-membership">
     <div class="vip-pass-card">
       <div class="card-top">
-        <span class="highlight-badge">Most Popular</span>
+        <span class="highlight-badge">Available Now</span>
         <div class="price-wrap">
           <div class="amount">$35</div>
           <div class="period">USD / Month</div>
@@ -487,7 +557,7 @@
       </div>
       <h2 class="card-title">VIP Channel Membership</h2>
       <p class="card-desc">
-        Continuous admission to Jacqueline's private VIP channel with unreleased content, community chat, and priority drops.
+        Instant admission to Jacqueline's private VIP channel with unreleased content, community chat, and priority drops.
       </p>
 
       <div class="benefits-list">
@@ -501,11 +571,11 @@
         </div>
         <div class="benefit-item">
           <div class="benefit-check">✓</div>
-          <span>Early access to all single drops</span>
+          <span>48-hour priority access to new content drops</span>
         </div>
         <div class="benefit-item">
           <div class="benefit-check">✓</div>
-          <span>Automated direct bot delivery</span>
+          <span>Automated direct delivery to your Telegram</span>
         </div>
       </div>
 
@@ -518,85 +588,82 @@
     <div class="perks-grid">
       <div class="perk-box">
         <div class="icon">⚡</div>
-        <div class="label">Instant Access</div>
+        <div class="label">Instant Delivery</div>
         <div class="sub">Invite link in seconds</div>
       </div>
       <div class="perk-box">
         <div class="icon">🔒</div>
         <div class="label">Private & Safe</div>
-        <div class="sub">Secure Stripe billing</div>
+        <div class="sub">Encrypted Stripe checkout</div>
       </div>
     </div>
   </div>
 
-  <!-- TAB 2: CONTENT PURCHASES / PPV DROPS -->
+  <!-- TAB 2: CONTENT SELECTION / COMING SOON -->
   <div class="tab-content" id="tab-drops">
-    <!-- Collection 1 -->
-    <div class="collection-card">
-      <div class="collection-header">
-        <span class="col-badge">Limited Release</span>
-        <div class="col-price">$9</div>
+    <!-- Coming Soon Banner -->
+    <div class="coming-soon-banner">
+      <div class="coming-soon-icon">✨</div>
+      <h2>Digital Vault Coming Soon</h2>
+      <p>
+        Individual digital drops and exclusive photo/video collections are currently in curation and will unlock soon.
+      </p>
+      
+      <div class="vip-early-prompt">
+        <span>⭐ VIP Members get 48-hour early access and special discounts on every drop.</span>
+        <button class="btn-vip-switch" onclick="switchTab('membership')">Get VIP Pass</button>
       </div>
-      <div>
-        <div class="col-title">Collection No. 01</div>
-        <div class="col-desc">
-          Exclusive digital photo drop with full high-resolution original files. Instant digital delivery after checkout.
-        </div>
-      </div>
-      <button class="btn-secondary" onclick="checkout('col1', 9)">
-        <span>📸 Purchase Collection No. 01 ($9)</span>
-      </button>
     </div>
 
-    <!-- Collection 2 -->
-    <div class="collection-card">
-      <div class="collection-header">
-        <span class="col-badge">Featured Drop</span>
-        <div class="col-price">$15</div>
+    <!-- Teaser Card 1 -->
+    <div class="teaser-card">
+      <div class="teaser-header">
+        <span class="badge-lock">🔒 Collection No. 01</span>
+        <span class="badge-status">In Post-Production</span>
       </div>
       <div>
-        <div class="col-title">Collection No. 02</div>
-        <div class="col-desc">
-          Signature photo & video bundle. Enhanced digital gallery featuring unreleased angles and studio sets.
+        <div class="teaser-title">Limited Photo Release</div>
+        <div class="teaser-desc">
+          High-resolution uncompressed photo set featuring exclusive studio angles.
         </div>
       </div>
-      <button class="btn-secondary" onclick="checkout('col2', 15)">
-        <span>✨ Purchase Collection No. 02 ($15)</span>
-      </button>
+      <div class="btn-locked">
+        <span>🔒 Coming Soon</span>
+      </div>
     </div>
 
-    <!-- Collection 3 -->
-    <div class="collection-card">
-      <div class="collection-header">
-        <span class="col-badge gold">Collector's Edit</span>
-        <div class="col-price">$25</div>
+    <!-- Teaser Card 2 -->
+    <div class="teaser-card">
+      <div class="teaser-header">
+        <span class="badge-lock">🔒 Collection No. 02</span>
+        <span class="badge-status">Coming Next</span>
       </div>
       <div>
-        <div class="col-title">Collection No. 03</div>
-        <div class="col-desc">
-          The comprehensive collector's package tailored into a complete digital archive bundle.
+        <div class="teaser-title">Signature Media Bundle</div>
+        <div class="teaser-desc">
+          Complete multimedia release with high-definition video clips and photos.
         </div>
       </div>
-      <button class="btn-secondary" onclick="checkout('col3', 25)">
-        <span>👑 Purchase Collection No. 03 ($25)</span>
-      </button>
+      <div class="btn-locked">
+        <span>🔒 Coming Soon</span>
+      </div>
     </div>
 
-    <!-- Collection 4 / Vault Bundle -->
-    <div class="collection-card">
-      <div class="collection-header">
-        <span class="col-badge gold">Ultimate Vault</span>
-        <div class="col-price">$45</div>
+    <!-- Teaser Card 3 -->
+    <div class="teaser-card">
+      <div class="teaser-header">
+        <span class="badge-lock">🔒 Deluxe Vault</span>
+        <span class="badge-status">VIP Priority</span>
       </div>
       <div>
-        <div class="col-title">VIP Deluxe Archive</div>
-        <div class="col-desc">
-          All past drops combined into one master high-resolution package. Maximum value one-time purchase.
+        <div class="teaser-title">Collector's Archive</div>
+        <div class="teaser-desc">
+          Comprehensive archive collection with private unreleased material.
         </div>
       </div>
-      <button class="btn-secondary" onclick="checkout('deluxe-vault', 45)">
-        <span>💎 Purchase Deluxe Archive ($45)</span>
-      </button>
+      <div class="btn-locked">
+        <span>🔒 Coming Soon</span>
+      </div>
     </div>
   </div>
 
@@ -663,4 +730,5 @@
     }
   </script>
 </body>
-</html>
+    </html>
+  
